@@ -1,8 +1,90 @@
 ---
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import Main from "@layouts/main.astro";
+import { Image } from "astro:assets";
+import Avatar from "@images/Avatar1k.png";
 const title = "Home";
 const desc = "Molly Scott's UX design and research portfolio";
 const ogTitle = "My Portfolio";
 ---
 
-<Main title={title} desc={desc} ogTitle={ogTitle} />
+<Main title={title} desc={desc} ogTitle={ogTitle}>
+  <section
+    id="home"
+    class="scroll-mt-20 min-h-screen grid grid-cols-1 grid-rows-3"
+  >
+    <div
+      class="col-start-1 row-span-1 row-start-2 mx-6 grid grid-cols-3 md:grid-cols-9 grid-rows-2 gap-6"
+    >
+      <h1
+        class="md:col-start-2 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-1 text-4xl md:text-5xl px-12 py-8 w-fit border-2 rounded-full"
+      >
+        Hi, I'm Molly
+      </h1>
+      <p
+        class="md:col-start-2 ml-8 md:ml-10 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-2 text-2xl md:text-3xl px-8 py-4 w-fit border-2 rounded-full"
+      >
+        I'm a UX designer
+      </p>
+    </div>
+  </section>
+  <section id="about" class="scroll-mt-20 mt-96">
+    <div
+      class="bg-slate-600 bg-opacity-55 min-h-screen w-full mx-auto pb-20 rounded-[2em]"
+    >
+      <h2 class="text-center text-5xl pt-36">About Me</h2>
+      <hr class="w-56 mx-auto my-6" />
+      <!-- Bento -->
+      <div
+        class="w-5/6 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,1frs))] gap-4"
+      >
+        <!-- Avatar -->
+        <div class="min-w-64 rounded-2xl overflow-clip">
+          <Image src={Avatar} alt="Cartoon avatar of Molly Scott" />
+        </div>
+        <!-- Tools -->
+        <div class="border rounded-2xl p-4">
+          <h3 class="text-center text-2xl my-2">My Favorite Tools</h3>
+          <ul class="grid aspect-square grid-cols-2 grid-rows-2 gap-4 mt-4">
+            <li
+              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+            >
+              <div>
+                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
+                <div>Figma</div>
+              </div>
+            </li>
+            <li
+              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+            >
+              <div>
+                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
+                <div>Figma</div>
+              </div>
+            </li><li
+              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+            >
+              <div>
+                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
+                <div>Figma</div>
+              </div>
+            </li><li
+              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+            >
+              <div>
+                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
+                <div>Figma</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="scroll-mt-20 min-h-screen mt-96">
+    <h2>My Projects</h2>
+  </section>
+  <section id="contact" class="scroll-mt-20 min-h-screen mt-96">
+    <h2>Contact Me</h2>
+  </section>
+</Main>
