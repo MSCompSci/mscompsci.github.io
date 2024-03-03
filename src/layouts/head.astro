@@ -9,44 +9,95 @@ interface Props {
 const { title, desc, ogTitle } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<SEO
-		title={title}
-		titleTemplate="%s | Portfolio"
-		description={desc}
-		nofollow={true}
-		charset="UTF-8"
-		openGraph={{
-		  basic: {
-			title: ogTitle,
-			type: "website",
-			image:
-			  "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
-		  },
-		  optional: {
-			description: desc,
-			locale: "en_US",
-			siteName: "Molly Scott's UX Portfolio",
-		  },
-		  image: {
-			type: "image/png",
-			width: 1280,
-			height: 720,
-			alt: "Molly Scott: UX Design and Research Logo",
-		  },
-		}}
-		extend={{
-		  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-		  meta: [
-			{ name: "viewport", content: "width=device-width,initial-scale=1" },
-			{ name: "generator", content: Astro.generator },
-		  ],
-		}}
-	  />
-	  <ViewTransitions />
-	</head>
-	<body>
-		<slot/>
-	</body>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <SEO
+      title={title}
+      titleTemplate="%s | Portfolio"
+      description={desc}
+      nofollow={true}
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          title: ogTitle,
+          type: "website",
+          image:
+            "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+        },
+        optional: {
+          description: desc,
+          locale: "en_US",
+          siteName: "Molly Scott's UX Portfolio",
+        },
+        image: {
+          type: "image/png",
+          width: 1280,
+          height: 720,
+          alt: "Molly Scott: UX Design and Research Logo",
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+        meta: [
+          { name: "viewport", content: "width=device-width,initial-scale=1" },
+          { name: "generator", content: Astro.generator },
+        ],
+      }}
+    />
+    <ViewTransitions />
+    <script is:inline>
+      function checkTheme() {
+        // Check for existing theme/preference
+        if (
+          typeof sessionStorage !== undefined &&
+          sessionStorage.getItem("theme")
+        ) {
+          // console.log("found ", sessionStorage.getItem("theme"));
+          return sessionStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          // console.log("not set, prefers dark");
+          return "true";
+        }
+        // console.log("set light");
+        return "false";
+      }
+      function setTheme(theme) {
+        // Set dark/light theme
+        if (theme === "true") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+        sessionStorage.setItem("theme", theme);
+      }
+      document.addEventListener("astro:before-preparation", () => {
+        // On change between pages
+        let theme = checkTheme();
+        setTheme(theme);
+      });
+      document.addEventListener("astro:page-load", () => {
+        // On initial page loads
+        // Set current URL for nav highlight
+        sessionStorage.setItem(
+          "navLocation",
+          window.location.pathname + window.location.hash
+        );
+        // Check color scheme
+        let theme = checkTheme();
+        setTheme(theme);
+
+        // Prevent page flicker
+        document.body.classList.remove("opacity-0");
+      });
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 opacity-0 transition-opacity duration-[0.4s] min-w-[280px]"
+  >
+    <script is:inline>
+      document.body.classList.add("opacity-0");
+    </script>
+    <slot />
+  </body>
 </html>
