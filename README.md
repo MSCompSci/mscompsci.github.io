@@ -4,6 +4,7 @@ I made this portfolio from scratch using the following:
 
 ## Tech stack
 - [Astro](https://astro.build/)
+    - [Astro SEO](https://github.com/jonasmerlin/astro-seo)
 - [Svelte](https://svelte.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Babylon.js](https://www.babylonjs.com/)
