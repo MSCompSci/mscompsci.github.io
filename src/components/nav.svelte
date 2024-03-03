@@ -4,17 +4,29 @@
   let menuOpen: boolean = false;
   function toggleMenu() {
     if (!menuOpen) {
-      document.getElementById("navMenu")?.classList.remove("hidden");
+      document.getElementById("navMenu")?.classList.replace("hidden", "flex");
+      document
+        .getElementById("wrapper")
+        ?.classList.replace("max-h-16", "max-h-96");
       menuOpen = true;
     } else {
-      document.getElementById("navMenu")?.classList.add("hidden");
+      setTimeout(() => {
+        document.getElementById("navMenu")?.classList.replace("flex", "hidden");
+      }, 150);
+      document
+        .getElementById("wrapper")
+        ?.classList.replace("max-h-96", "max-h-16");
+
       menuOpen = false;
     }
   }
 </script>
 
 <header class="fixed z-10 top-4 right-4 left-4 text-white">
-  <div class="bg-slate-800 bg-opacity-70 rounded-[2rem]">
+  <div
+    id="wrapper"
+    class=" overflow-clip max-h-16 transition-[max-height_4s_ease-in-out] bg-slate-800 bg-opacity-70 rounded-[2rem]"
+  >
     <menu
       class="mr-0 ml-auto h-fit bg-slate-300 w-fit dark:bg-slate-900 rounded-full flex justify-end p-2 gap-2"
     >
@@ -33,10 +45,7 @@
         </button>
       </li>
     </menu>
-    <nav
-      id="navMenu"
-      class="hidden list-none flex justify-center pb-4 rounded-3xl"
-    >
+    <nav id="navMenu" class="hidden list-none justify-center pb-4 rounded-3xl">
       <ol class="flex flex-col gap-4 text-center pt-6 w-[66%]">
         <li class="w-full border rounded-full">
           <a
