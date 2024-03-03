@@ -21,7 +21,7 @@
     class:md:animate-move-left-md={menuOpen}
     class:animate-move-right={!menuOpen}
     class:md:animate-move-right-md={!menuOpen}
-    class="bg-slate-200 h-16 dark:bg-slate-800 bg-opacity-80 rounded-3xl w-40"
+    class="bg-slate-200 h-16 dark:bg-slate-800 bg-opacity-80 rounded-[2em] w-40"
   >
     <menu
       id="menuBlock"
@@ -48,10 +48,12 @@
       class:hidden={!menuOpen}
       class=" list-none justify-center pb-4 rounded-3xl"
     >
-      <ol class="flex flex-col md:flex-row gap-4 text-center pt-6 w-[66%]">
+      <ol
+        class="flex flex-col md:flex-row gap-4 text-center pt-6 w-[80%] max-w-[48rem]"
+      >
         {#each links as link}
           <li
-            class=" text-lg text-slate-950 dark:text-slate-50 hover:scale-105 w-full border-2 border-slate-600 dark:border-slate-500 rounded-full"
+            class="md:w-48 w-full text-lg text-slate-950 dark:text-slate-50 hover:scale-105 border-2 border-slate-600 dark:border-slate-500 rounded-full"
           >
             <a
               title={link}
