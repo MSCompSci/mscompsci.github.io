@@ -1,0 +1,13 @@
+---
+import Head from '@layouts/head.astro'
+import Nav from '@components/nav.svelte'
+interface Props {
+  title: string;
+  desc: string;
+  ogTitle: string;
+}
+const { title, desc, ogTitle } = Astro.props;
+---
+<Head title={title} desc={desc} ogTitle={ogTitle}>
+    <Nav></Nav>
+</Head>
