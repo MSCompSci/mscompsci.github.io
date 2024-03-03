@@ -35,10 +35,10 @@
       on:change={setTheme}
     />
     <div
-      class="bg-black block h-11 w-20 rounded-full shadow border peer-focus-within:border-black peer-focus-within:border-2 dark:peer-focus-within:border-white"
+      class="bg-slate-400 border-slate-400 dark:bg-black block h-11 w-20 rounded-full shadow border dark:border-slate-800 peer-focus-within:border-black peer-focus-within:border-2 dark:peer-focus-within:border-white"
     ></div>
     <div
-      class="preload absolute text-white shadow-xl border-2 flex justify-center w-10 h-10 rounded-full left-[2px] top-[2px] peer-checked:translate-x-9 transition"
+      class="bg-slate-100 border-slate-200 dark:bg-slate-700 dark:border-slate-600 preload absolute text-slate-950 dark:text-slate-50 shadow-xl border flex justify-center w-10 h-10 rounded-full left-[2px] top-[2px] peer-checked:translate-x-9 transition"
     >
       <i
         aria-hidden="true"
