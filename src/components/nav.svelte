@@ -2,39 +2,35 @@
   import "@fortawesome/fontawesome-free/css/all.min.css";
   import DarkMode from "@components/darkMode.svelte";
   let menuOpen: boolean = false;
+  let links: string[] = ["Home", "About", "Projects", "Contact"];
+
+  // Open/close nav menu
   function toggleMenu() {
     if (!menuOpen) {
-      document.getElementById("navMenu")?.classList.replace("hidden", "flex");
-      document
-        .getElementById("wrapper")
-        ?.classList.replace("max-h-16", "max-h-96");
       menuOpen = true;
     } else {
-      setTimeout(() => {
-        document.getElementById("navMenu")?.classList.replace("flex", "hidden");
-      }, 150);
-      document
-        .getElementById("wrapper")
-        ?.classList.replace("max-h-96", "max-h-16");
-
       menuOpen = false;
     }
   }
 </script>
 
-<header class="fixed z-10 top-4 right-4 left-4 text-white">
+<header class=" m-4 flex justify-end overflow-clip rounded-[2rem]">
   <div
     id="wrapper"
-    class=" overflow-clip max-h-16 transition-[max-height_4s_ease-in-out] dark:bg-slate-800 bg-slate-200 bg-opacity-80 rounded-[2rem]"
+    class:animate-move-left={menuOpen}
+    class:md:animate-move-left-md={menuOpen}
+    class:animate-move-right={!menuOpen}
+    class:md:animate-move-right-md={!menuOpen}
+    class="bg-slate-200 h-16 dark:bg-slate-800 bg-opacity-80 rounded-3xl w-40"
   >
     <menu
       id="menuBlock"
-      class="mr-0 ml-auto h-fit bg-slate-300 w-fit dark:bg-slate-900 rounded-l-full rounded-r-none flex justify-end p-2 gap-2"
+      class="mr-0 ml-auto h-16 bg-slate-300 w-40 rounded-l-[2rem] dark:bg-slate-900 flex justify-center p-2 gap-2"
     >
-      <li>
+      <li class="self-center">
         <DarkMode />
       </li>
-      <li>
+      <li class="self-center">
         <button
           on:click={toggleMenu}
           aria-controls="navMenu"
@@ -48,47 +44,22 @@
     </menu>
     <nav
       id="navMenu"
-      class="hidden list-none justify-center pb-4 md:pb-6 rounded-3xl"
+      class:flex={menuOpen}
+      class:hidden={!menuOpen}
+      class=" list-none justify-center pb-4 rounded-3xl"
     >
-      <ol
-        class="flex flex-col md:flex-row md:gap-8 gap-4 text-center pt-6 md:pt-12 w-[66%]"
-      >
-        <li
-          class=" text-lg text-slate-950 dark:text-slate-50 hover:scale-105 w-full border-2 border-slate-600 dark:border-slate-500 rounded-full"
-        >
-          <a
-            title="Home"
-            class=" flex justify-center rounded-full py-3"
-            href="/#home">Home</a
+      <ol class="flex flex-col md:flex-row gap-4 text-center pt-6 w-[66%]">
+        {#each links as link}
+          <li
+            class=" text-lg text-slate-950 dark:text-slate-50 hover:scale-105 w-full border-2 border-slate-600 dark:border-slate-500 rounded-full"
           >
-        </li>
-        <li
-          class=" text-lg text-slate-950 dark:text-slate-50 hover:scale-105 w-full border-2 border-slate-600 dark:border-slate-500 rounded-full"
-        >
-          <a
-            title="About"
-            class="flex justify-center rounded-full py-3"
-            href="/#about">About</a
-          >
-        </li>
-        <li
-          class=" text-lg text-slate-950 dark:text-slate-50 hover:scale-105 w-full border-2 border-slate-600 dark:border-slate-500 rounded-full"
-        >
-          <a
-            title="Projects"
-            class="flex justify-center rounded-full py-3"
-            href="/#projects">Projects</a
-          >
-        </li>
-        <li
-          class=" text-lg text-slate-950 dark:text-slate-50 hover:scale-105 w-full border-2 border-slate-600 dark:border-slate-500 rounded-full"
-        >
-          <a
-            title="Contact"
-            class="flex justify-center rounded-full py-3"
-            href="/#contact">Contact</a
-          >
-        </li>
+            <a
+              title={link}
+              class=" flex justify-center rounded-full py-3"
+              href={"/#" + link.toLowerCase()}>{link}</a
+            >
+          </li>
+        {/each}
       </ol>
     </nav>
   </div>
