@@ -14,7 +14,9 @@
   }
 </script>
 
-<header class=" m-4 flex justify-end overflow-clip rounded-[2rem]">
+<header
+  class=" fixed z-10 right-0 left-0 top-0 m-4 flex justify-end overflow-clip rounded-[2rem]"
+>
   <div
     id="wrapper"
     class:animate-move-left={menuOpen}
