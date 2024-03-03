@@ -23,7 +23,7 @@
 <label
   for="dm-toggle"
   title="Toggle Dark Mode"
-  class="flex items-center cursor-pointer select-none text-dark dark:text-white"
+  class="flex items-center cursor-pointer select-none"
 >
   <div class="relative hover:scale-105">
     <input
@@ -35,10 +35,10 @@
       on:change={setTheme}
     />
     <div
-      class="block h-11 rounded-full shadow border peer-focus-within:border-black peer-focus-within:border-2 dark:peer-focus-within:border-white"
+      class="bg-black block h-11 w-20 rounded-full shadow border peer-focus-within:border-black peer-focus-within:border-2 dark:peer-focus-within:border-white"
     ></div>
     <div
-      class="preload absolute text-white shadow-xl border-2 flex justify-center w-10 h-10 rounded-full left-[2px] top-[2px] peer-checked:translate-x-7 transition"
+      class="preload absolute text-white shadow-xl border-2 flex justify-center w-10 h-10 rounded-full left-[2px] top-[2px] peer-checked:translate-x-9 transition"
     >
       <i
         aria-hidden="true"
