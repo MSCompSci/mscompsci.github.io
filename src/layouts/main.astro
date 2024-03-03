@@ -11,4 +11,7 @@ const { title, desc, ogTitle } = Astro.props;
 
 <Head title={title} desc={desc} ogTitle={ogTitle}>
   <Nav client:load />
+  <main class="mt-20 text-slate-950 dark:text-slate-50">
+    <slot />
+  </main>
 </Head>
