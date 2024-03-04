@@ -30,51 +30,123 @@ const ogTitle = "My Portfolio";
   </section>
   <section id="about" class="scroll-mt-20 mt-96">
     <div
-      class="bg-slate-600 bg-opacity-55 min-h-screen w-full mx-auto pb-20 rounded-[2em]"
+      class="bg-slate-600 bg-opacity-55 min-h-screen w-auto mx-auto pb-20 rounded-[2em]"
     >
       <h2 class="text-center text-5xl pt-36">About Me</h2>
       <hr class="w-56 mx-auto my-6" />
       <!-- Bento -->
       <div
-        class="w-5/6 mx-auto grid grid-cols-[repeat(auto-fit,minmax(200px,1frs))] gap-4"
+        class="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 sm:max-w-[40rem] lg:grid-cols-3 lg:max-w-[62rem] gap-4 w-auto mx-auto"
       >
         <!-- Avatar -->
-        <div class="min-w-64 rounded-2xl overflow-clip">
+        <div
+          class="mx-auto sm:row-start-1 sm:col-start-1 sm:col-span-1 lg:col-start-2 w-80 h-80 border flex rounded-2xl overflow-clip"
+        >
           <Image src={Avatar} alt="Cartoon avatar of Molly Scott" />
         </div>
         <!-- Tools -->
-        <div class="border rounded-2xl p-4">
-          <h3 class="text-center text-2xl my-2">My Favorite Tools</h3>
-          <ul class="grid aspect-square grid-cols-2 grid-rows-2 gap-4 mt-4">
+        <div
+          class="sm:col-start-1 sm:row-start-2 lg:row-start-1 mx-auto w-80 h-80 flex flex-col border rounded-2xl
+        justify-center"
+        >
+          <h3 class="text-center mx-auto h-fit w-fit text-xl my-3">
+            My Favorite Tools
+          </h3>
+          <ul class="grid grid-rows-2 grid-cols-2 gap-2 mx-auto">
             <li
-              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
             >
-              <div>
-                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
-                <div>Figma</div>
-              </div>
+              <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
+              <div>Figma</div>
             </li>
             <li
-              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
             >
-              <div>
-                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
-                <div>Figma</div>
-              </div>
-            </li><li
-              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+              <i aria-hidden="true" class="fa-brands fa-github fa-2x"></i>
+              <div>GitHub</div>
+            </li>
+            <li
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
             >
-              <div>
-                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
-                <div>Figma</div>
-              </div>
-            </li><li
-              class="place-self-center border rounded-2xl text-center h-full w-full flex justify-center items-center"
+              <i aria-hidden="true" class="fa-brands fa-linux fa-2x"></i>
+              <div>Linux</div>
+            </li>
+            <li
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
             >
-              <div>
-                <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
-                <div>Figma</div>
-              </div>
+              <i aria-hidden="true" class="fa-regular fa-note-sticky fa-2x"></i>
+              <div>Miro</div>
+            </li>
+          </ul>
+        </div>
+        <!-- Skills -->
+        <div
+          class="sm:col-start-2 sm:row-start-1 lg:col-start-3 lg:row-span-2 lg:h-full mx-auto w-80 h-80 flex flex-col border rounded-2xl justify-center lg:justify-start"
+        >
+          <h3 class="text-center mx-auto h-fit w-fit text-xl my-3 lg:mt-12">
+            My Top Skills
+          </h3>
+          <ul
+            class="mx-auto aspect-square text-center justify-center flex flex-row flex-wrap w-44 gap-2"
+          >
+            <li class="border rounded-full py-1 px-5 w-fit lg:w-full h-fit">
+              Skill
+            </li>
+            <li class="border rounded-full py-1 px-5 w-fit lg:w-full h-fit">
+              Skill
+            </li>
+            <li class="border rounded-full py-1 px-5 w-fit lg:w-full h-fit">
+              Skill
+            </li>
+            <li class="border rounded-full py-1 px-5 w-fit lg:w-full h-fit">
+              Skill
+            </li>
+            <li class="border rounded-full py-1 px-5 w-fit lg:w-full h-fit">
+              Skill
+            </li>
+            <li class="border rounded-full py-1 px-5 w-fit lg:w-full h-fit">
+              Skill
+            </li>
+          </ul>
+          <div
+            class="hidden lg:block mx-auto w-5/6 aspect-square mt-8 rounded-2xl border"
+          >
+          </div>
+        </div>
+        <!-- Background -->
+        <div
+          class="sm:col-start-2 sm:row-start-2 lg:col-start-1 lg:col-span-2 mx-auto w-80 lg:w-full h-80 flex flex-col border rounded-2xl
+        justify-center"
+        >
+          <h3 class="text-center mx-auto h-fit w-fit text-xl my-3">
+            My Background
+          </h3>
+          <ul class="grid grid-rows-2 grid-cols-2 gap-2 mx-auto">
+            <li
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
+            >
+              <i aria-hidden="true" class="fa-solid fa-graduation-cap fa-2x"
+              ></i>
+              <div>Education</div>
+            </li>
+            <li
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
+            >
+              <i aria-hidden="true" class="fa-solid fa-robot fa-2x"></i>
+              <div>Robotics</div>
+            </li>
+            <li
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
+            >
+              <i aria-hidden="true" class="fa-solid fa-brain fa-2x"></i>
+              <div>Philosophy</div>
+            </li>
+            <li
+              class="border rounded-xl text-center w-24 aspect-square justify-center flex flex-col"
+            >
+              <i aria-hidden="true" class="fa-solid fa-hand-holding-heart fa-2x"
+              ></i>
+              <div class="text-sm">Volunteering</div>
             </li>
           </ul>
         </div>
