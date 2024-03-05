@@ -3,9 +3,19 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Main from "@layouts/main.astro";
 import { Image } from "astro:assets";
 import Avatar from "@images/Avatar1k.png";
+import IconCard from '@components/iconCard.svelte'
+import FlipCard from '@components/flipCard.svelte'
+import FlipCardHover from '@components/flipCardHover.svelte'
+type IconButton = [
+    { item: string; icon: string },
+    { item: string; icon: string },
+    { item: string; icon: string },
+    { item: string; icon: string },
+  ];
 const title = "Home";
 const desc = "Molly Scott's UX design and research portfolio";
 const ogTitle = "My Portfolio";
+const tools:IconButton = [{item:"Figma",icon:"fa-brands fa-figma"},{item:"GitHub",icon:"fa-brands fa-github"},{item:"Linux",icon:"fa-brands fa-linux"},{item:"Miro",icon:"fa-regular fa-note-sticky"}]
 ---
 
 <Main title={title} desc={desc} ogTitle={ogTitle}>
@@ -36,53 +46,22 @@ const ogTitle = "My Portfolio";
       <hr class="w-56 mx-auto my-6" />
       <!-- Bento -->
       <div
-        class="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 items-center"
+        class="max-w-[75%] sm:max-w-[90%] 2xl:max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 items-center"
       >
         <!-- Avatar -->
-        <div class="col-span-1 row-span-1 lg:col-start-2 lg:row-start-1">
+        <FlipCardHover position="ol-span-1 row-span-1 lg:col-start-2 lg:row-start-1">
           <Image
-            src={Avatar}
-            alt="Cartoon avatar of Molly Scott"
-            class="rounded-2xl"
-          />
-        </div>
+              src={Avatar}
+              alt="Cartoon avatar of Molly Scott"
+              class="rounded-2xl"
+              slot="front"
+            />
+            <h3 class="text-center text-4xl" slot="back" >Hi there!</h3>
+        </FlipCardHover>
 
         <!-- Tools -->
-        <div
-          class="border rounded-2xl w-full aspect-square flex flex-col items-center justify-center lg:col-start-1 lg:row-start-1"
-        >
-          <h3 class="text-center mx-auto h-fit w-fit text-2xl my-3">
-            My Favorite Tools
-          </h3>
-          <ul
-            class="w-[70%] aspect-square mx-auto flex flex-wrap gap-x-4 justify-evenly items-center"
-          >
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
-              <div>Figma</div>
-            </li>
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-brands fa-github fa-2x"></i>
-              <div>GitHub</div>
-            </li>
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-brands fa-linux fa-2x"></i>
-              <div>Linux</div>
-            </li>
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-regular fa-note-sticky fa-2x"></i>
-              <div>Miro</div>
-            </li>
-          </ul>
-        </div>
+        <IconCard client:load title="My Favorite Tools" items={tools} position="lg:col-start-1 lg:row-start-1"></IconCard>
+        
         <!-- Skills -->
         <div
           class="border rounded-2xl w-full aspect-square flex flex-col items-center justify-center lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:aspect-auto lg:h-full lg:justify-start"
@@ -132,7 +111,7 @@ const ogTitle = "My Portfolio";
           class="border rounded-2xl w-full aspect-square flex flex-col items-center justify-center lg:col-start-1 lg:row-start-2 lg:col-span-2 lg:aspect-[2/1] lg:row-span-1"
         >
           <h3 class="text-center mx-auto h-fit w-fit text-2xl my-3">
-            My Favorite Tools
+            My Background
           </h3>
           <ul
             class="w-[70%] lg:w-1/4 aspect-square mx-auto flex flex-wrap gap-x-4 justify-evenly items-center"
@@ -140,26 +119,26 @@ const ogTitle = "My Portfolio";
             <li
               class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
             >
-              <i aria-hidden="true" class="fa-brands fa-figma fa-2x"></i>
-              <div>Figma</div>
+              <i aria-hidden="true" class="fa-solid fa-microchip fa-2x"></i>
+              <div>Engineering</div>
             </li>
             <li
               class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
             >
-              <i aria-hidden="true" class="fa-brands fa-github fa-2x"></i>
-              <div>GitHub</div>
+              <i aria-hidden="true" class="fa-solid fa-robot fa-2x"></i>
+              <div>Robotics</div>
             </li>
             <li
               class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
             >
-              <i aria-hidden="true" class="fa-brands fa-linux fa-2x"></i>
-              <div>Linux</div>
+              <i aria-hidden="true" class="fa-solid fa-brain fa-2x"></i>
+              <div>Philosophy</div>
             </li>
             <li
               class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
             >
-              <i aria-hidden="true" class="fa-regular fa-note-sticky fa-2x"></i>
-              <div>Miro</div>
+              <i aria-hidden="true" class="fa-solid fa-hand-holding-heart fa-2x"></i>
+              <div class="text-sm">Volunteering</div>
             </li>
           </ul>
         </div>
