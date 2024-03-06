@@ -60,9 +60,11 @@ const tools:IconButton = [{item:"Figma",icon:"fa-brands fa-figma"},{item:"GitHub
         </FlipCardHover>
 
         <!-- Tools -->
+        <!-- TODO Add gradient background -->
         <IconCard client:load title="My Favorite Tools" items={tools} position="lg:col-start-1 lg:row-start-1"></IconCard>
         
         <!-- Skills -->
+        <!-- TODO Make it look like a phone? -->
         <div
           class="border rounded-2xl w-full aspect-square flex flex-col items-center justify-center lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:aspect-auto lg:h-full lg:justify-start"
         >
@@ -106,39 +108,37 @@ const tools:IconButton = [{item:"Figma",icon:"fa-brands fa-figma"},{item:"GitHub
             </li>
           </ul>
         </div>
-        <!-- Background -->
+        <!-- Background -->       
         <div
           class="border rounded-2xl w-full aspect-square flex flex-col items-center justify-center lg:col-start-1 lg:row-start-2 lg:col-span-2 lg:aspect-[2/1] lg:row-span-1"
         >
           <h3 class="text-center mx-auto h-fit w-fit text-2xl my-3">
             My Background
           </h3>
-          <ul
-            class="w-[70%] lg:w-1/4 aspect-square mx-auto flex flex-wrap gap-x-4 justify-evenly items-center"
-          >
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-solid fa-microchip fa-2x"></i>
-              <div>Engineering</div>
+          <ul class="w-[70%] flex flex-col lg:grid lg:grid-cols-4 lg:w-[85%] gap-2">
+            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
+              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
+                <i aria-hidden="true" class=" fa-solid fa-gear"></i>
+                <div>Engineering</div>
+              </div>
             </li>
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-solid fa-robot fa-2x"></i>
-              <div>Robotics</div>
+            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
+              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
+                <i aria-hidden="true" class=" fa-solid fa-robot"></i>
+                <div>Robotics</div>
+              </div>
             </li>
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-solid fa-brain fa-2x"></i>
-              <div>Philosophy</div>
+            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
+              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
+                <i aria-hidden="true" class=" fa-solid fa-brain"></i>
+                <div>Philosophy</div>
+              </div>
             </li>
-            <li
-              class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center"
-            >
-              <i aria-hidden="true" class="fa-solid fa-hand-holding-heart fa-2x"></i>
-              <div class="text-sm">Volunteering</div>
+            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
+              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
+                <i aria-hidden="true" class=" fa-solid fa-hand-holding-heart"></i>
+                <div>Volunteering</div>
+              </div>
             </li>
           </ul>
         </div>
