@@ -14,4 +14,16 @@ const { title, desc, ogTitle } = Astro.props;
   <main class="mt-20 text-slate-950 dark:text-slate-50">
     <slot />
   </main>
+  <footer
+    class="bg-slate-200 w-full text-center py-4 dark:bg-slate-800 text-slate-950 dark:text-slate-300"
+  >
+    <p class="text-lg">
+      Made with <i aria-hidden="true" class="fa-solid fa-heart"></i><span
+        class="sr-only">love</span
+      > using <a href="https://astro.build/"
+        ><i aria-hidden="true" class="fa-solid fa-rocket"></i> Astro</a
+      >
+    </p>
+    <p>© 2024 Molly Scott</p>
+  </footer>
 </Head>
