@@ -7,7 +7,7 @@ I made this portfolio from scratch using the following:
     - [Astro SEO](https://github.com/jonasmerlin/astro-seo)
 - [Svelte](https://svelte.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
-- [Babylon.js](https://www.babylonjs.com/)
+    - [Tailwindcss Typography](https://github.com/tailwindlabs/tailwindcss-typography)
 
 ## Styling
 - [Font Awesome icons](https://fontawesome.com/)
@@ -15,4 +15,3 @@ I made this portfolio from scratch using the following:
 
 ## Design tools
 - [Canva](https://www.canva.com/)
-- [Blender](https://www.blender.org/)
