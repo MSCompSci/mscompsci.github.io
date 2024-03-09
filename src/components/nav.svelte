@@ -37,7 +37,7 @@
           on:click={toggleMenu}
           aria-controls="navMenu"
           title="Menu"
-          class=" hover:scale-105 h-11 w-11 rounded-full bg-slate-100 border-slate-300 dark:border-slate-800 border text-slate-950 dark:bg-slate-700 dark:text-slate-50"
+          class=" hover:scale-105 h-11 w-11 rounded-full bg-slate-100 border-slate-300 shadow dark:border-slate-800 border text-slate-950 dark:bg-slate-700 dark:text-slate-50"
         >
           <i aria-hidden="true" class="fa-solid fa-xl fa-bars"></i>
           <span class="sr-only">Main menu</span>
@@ -55,7 +55,7 @@
       >
         {#each links as link}
           <li
-            class="md:w-48 w-full text-lg text-slate-950 dark:text-slate-50 hover:scale-105 border-2 border-slate-600 dark:border-slate-500 rounded-full"
+            class="md:w-48 w-full text-lg text-slate-950 shadow dark:text-slate-50 hover:scale-105 hover:bg-slate-100 dark:hover:bg-slate-600 border-2 border-slate-600 dark:border-slate-500 rounded-full"
           >
             <a
               title={link}

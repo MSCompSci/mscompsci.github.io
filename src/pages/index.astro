@@ -4,46 +4,57 @@ import Main from "@layouts/main.astro";
 import { Image } from "astro:assets";
 import Avatar from "@images/Avatar1k.png";
 import IconCard from '@components/iconCard.svelte'
-import FlipCard from '@components/flipCard.svelte'
+import PhoneHero from '@images/PhoneHero.svg'
 import FlipCardHover from '@components/flipCardHover.svelte'
+import BackgroundCard from '@components/backgroundCard.svelte'
 type IconButton = [
-    { item: string; icon: string },
-    { item: string; icon: string },
-    { item: string; icon: string },
-    { item: string; icon: string },
+    { item: string; icon: string; desc: string },
+    { item: string; icon: string; desc: string },
+    { item: string; icon: string; desc: string },
+    { item: string; icon: string; desc: string },
   ];
 const title = "Home";
 const desc = "Molly Scott's UX design and research portfolio";
 const ogTitle = "My Portfolio";
-const tools:IconButton = [{item:"Figma",icon:"fa-brands fa-figma"},{item:"GitHub",icon:"fa-brands fa-github"},{item:"Linux",icon:"fa-brands fa-linux"},{item:"Miro",icon:"fa-regular fa-note-sticky"}]
+const tools:IconButton = [{item:"Figma",icon:"fa-brands fa-figma", desc:"I use Figma to create website prototypes and wireframes."},{item:"GitHub",icon:"fa-brands fa-github", desc:"I use GitHub for tracking projects and version control."},{item:"Linux",icon:"fa-brands fa-linux",desc:"I use Linux on my personal computer and hobby home servers."},{item:"Miro",icon:"fa-regular fa-note-sticky",desc:"I use Miro to plan projects and share UX insights."}]
+const backs:IconButton = [{item:"Engineering",icon:"fa-solid fa-gear fa-xl", desc:"I have a B.S. in electro-mechanical engineering technology."},{item:"Robotics",icon:"fa-solid fa-robot fa-xl", desc:"I've created nationally-competing autonomous robots."},{item:"Philosophy",icon:"fa-solid fa-brain fa-xl",desc:"I minored in philosophy, focusing on eastern traditions and neuroscience."},{item:"Leadership",icon:"fa-solid fa-hand-holding-heart fa-xl",desc:"I've lead two student organizations with 60+ members."}]
 ---
 
 <Main title={title} desc={desc} ogTitle={ogTitle}>
   <section
     id="home"
-    class="scroll-mt-20 min-h-screen grid grid-cols-1 grid-rows-3"
+    class=" scroll-mt-20  max-w-screen-xl min-h-screen w-[90%] mx-auto lg:grid lg:grid-cols-[2fr_4fr]"
   >
+  <div class="z-0 h-full pl-20 pb-8 col-start-2 row-start-1 row-span-3 ">
+    <Image
+      src={PhoneHero}
+      alt="3D render of phone with abstract background"
+      loading={"eager"}
+    >
+    </Image>
+  </div>
     <div
-      class="col-start-1 row-span-1 row-start-2 mx-6 grid grid-cols-3 md:grid-cols-9 grid-rows-2 gap-6"
+      class="h-fit grid grid-cols-3 md:grid-cols-9 grid-rows-2 gap-6 col-start-1 row-span-1 row-start-2"
     >
       <h1
-        class="md:col-start-2 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-1 text-4xl md:text-5xl px-12 py-8 w-fit border-2 rounded-full"
+        class=" bg-slate-50 dark:bg-slate-700 md:col-start-2 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-1 text-4xl md:text-5xl px-12 py-8 w-fit border-2 rounded-full"
       >
         Hi, I'm Molly
       </h1>
       <p
-        class="md:col-start-2 ml-8 md:ml-10 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-2 text-2xl md:text-3xl px-8 py-4 w-fit border-2 rounded-full"
+        class="bg-slate-50 dark:bg-slate-700 md:col-start-2 ml-8 md:ml-10 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-2 text-2xl md:text-3xl px-8 py-4 w-fit border-2 rounded-full"
       >
         I'm a UX designer
       </p>
     </div>
+
   </section>
   <section id="about" class="scroll-mt-20 mt-96">
     <div
-      class="bg-slate-600 bg-opacity-55 min-h-screen w-auto mx-auto pb-20 rounded-[2em]"
+      class="bg-slate-200 dark:bg-slate-600 bg-opacity-55 min-h-screen w-auto mx-auto pb-20 rounded-[2em] shadow-2xl"
     >
       <h2 class="text-center text-5xl pt-36">About Me</h2>
-      <hr class="w-56 mx-auto my-6" />
+      <hr class="w-56 mx-auto my-6 border-slate-500" />
       <!-- Bento -->
       <div
         class="max-w-[75%] sm:max-w-[90%] 2xl:max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 items-center"
@@ -55,93 +66,61 @@ const tools:IconButton = [{item:"Figma",icon:"fa-brands fa-figma"},{item:"GitHub
               alt="Cartoon avatar of Molly Scott"
               class="rounded-2xl"
               slot="front"
+              loading={"eager"}
             />
             <h3 class="text-center text-4xl" slot="back" >Hi there!</h3>
         </FlipCardHover>
 
         <!-- Tools -->
         <!-- TODO Add gradient background -->
-        <IconCard client:load title="My Favorite Tools" items={tools} position="lg:col-start-1 lg:row-start-1"></IconCard>
+        <IconCard client:load title="My Favorite Tools" items={tools} position="lg:col-start-1 lg:row-start-1" background=" bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800" ></IconCard>
         
         <!-- Skills -->
-        <!-- TODO Make it look like a phone? -->
         <div
-          class="border rounded-2xl w-full aspect-square flex flex-col items-center justify-center lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:aspect-auto lg:h-full lg:justify-start"
+          class=" border shadow-xl dark:border-slate-700 bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800 rounded-2xl w-full aspect-square flex flex-col items-center justify-center sm:self-start sm:row-span-2 lg:col-start-3 lg:row-start-1 lg:aspect-auto sm:h-full sm:justify-start"
         >
           <h3
-            class="text-center mx-auto h-fit w-fit text-2xl my-3 lg:mt-10 lg:mb-8"
+            class="text-center mx-auto h-fit w-fit text-2xl my-3 sm:mt-10 sm:mb-8"
           >
             My Top Skills
           </h3>
           <ul
-            class="w-[70%] text-xl items-center aspect-square mx-auto grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-y-6"
+            class="w-[70%] pb-2 text-xl items-center aspect-square mx-auto grid grid-cols-1 gap-2 sm:gap-y-6"
           >
             <li
-              class="border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class=" dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700  border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
-              Skill
+              Collaboration
             </li>
             <li
-              class="border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700  border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
-              Skill
+              Programming
             </li>
             <li
-              class="border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700  border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
-              Skill
+              User Interviews
             </li>
             <li
-              class="border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
-              Skill
+              Figma
             </li>
             <li
-              class="border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
-              Skill
+              Communication
             </li>
             <li
-              class="border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
-              Skill
+              Prototyping
             </li>
           </ul>
         </div>
         <!-- Background -->       
-        <div
-          class="border rounded-2xl w-full aspect-square flex flex-col items-center justify-center lg:col-start-1 lg:row-start-2 lg:col-span-2 lg:aspect-[2/1] lg:row-span-1"
-        >
-          <h3 class="text-center mx-auto h-fit w-fit text-2xl my-3">
-            My Background
-          </h3>
-          <ul class="w-[70%] flex flex-col lg:grid lg:grid-cols-4 lg:w-[85%] gap-2">
-            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
-              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
-                <i aria-hidden="true" class=" fa-solid fa-gear"></i>
-                <div>Engineering</div>
-              </div>
-            </li>
-            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
-              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
-                <i aria-hidden="true" class=" fa-solid fa-robot"></i>
-                <div>Robotics</div>
-              </div>
-            </li>
-            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
-              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
-                <i aria-hidden="true" class=" fa-solid fa-brain"></i>
-                <div>Philosophy</div>
-              </div>
-            </li>
-            <li class="border rounded-2xl w-full  text-center py-2 lg:py-20 lg:px-2">
-              <div class="flex flex-row lg:flex-col gap-2 w-2/3 mx-auto items-center">
-                <i aria-hidden="true" class=" fa-solid fa-hand-holding-heart"></i>
-                <div>Volunteering</div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <BackgroundCard client:load title="My Background" items={backs} ></BackgroundCard>
       </div>
     </div>
   </section>

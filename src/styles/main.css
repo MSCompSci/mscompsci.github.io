@@ -5,12 +5,12 @@
 @layer utilities {
   .flip-card {
     background-color: transparent;
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
     perspective: 1000px;
   }
   .flip-card-inner {
     position: relative;
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
@@ -30,7 +30,7 @@
   }
   
   .flip-card-back {
-    background-color: rgb(100 116 139);
+    background-color: rgb(150, 163, 182);
     transform: rotateY(180deg);
     border-width: 1px;
     border-radius: 1rem;

@@ -1,25 +1,28 @@
 <script lang="ts">
   import FlipCard from "@components/flipCard.svelte";
   type IconButton = [
-    { item: string; icon: string },
-    { item: string; icon: string },
-    { item: string; icon: string },
-    { item: string; icon: string },
+    { item: string; icon: string; desc: string },
+    { item: string; icon: string; desc: string },
+    { item: string; icon: string; desc: string },
+    { item: string; icon: string; desc: string },
   ];
   export let title: string;
   export let items: IconButton;
   export let position: string;
+  export let background: string;
   let flipCard:boolean = false;
   let backTitle:string;
-  function showBack(i:string){
+  let description: string;
+  function showBack(i:string, d:string){
     backTitle = i;
+    description = d;
     // console.log(i)
     flipCard = true;
   }
 </script>
 
-<FlipCard position={position} flipped={flipCard}>
-    <div slot="front" class="w-full h-full border rounded-2xl flex flex-col items-center justify-center">
+<FlipCard aspect="aspect-square " position={position} background={background} flipped={flipCard}>
+    <div slot="front" class="w-full h-full shadow-xl border dark:border-slate-700 rounded-2xl flex flex-col items-center justify-center">
         <h3 class="text-center mx-auto h-fit w-fit text-2xl my-3">
             {title}
           </h3>
@@ -29,9 +32,9 @@
           >
             {#each items as item}
               <li
-                class="border w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center bg-slate-600 hover:bg-slate-800 hover:scale-105"
+                class="border dark:border-slate-700 shadow-lg w-[40%] h-[40%] flex flex-col justify-center items-center rounded-2xl text-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-700 dark:hover:to-slate-800 dark:hover:border-slate-800 hover:scale-105"
               >
-                <button class="w-full h-full" title={item.item} on:click={()=>showBack(item.item)}>
+                <button class="w-full h-full" title={item.item} on:click={()=>showBack(item.item, item.desc)}>
                   <i aria-hidden="true" class={item.icon + " fa-2x"}></i>
                   <div>{item.item}</div>
                 </button>
@@ -40,8 +43,12 @@
           </ul>
     </div>
     <div slot="back">
-        <h3>{backTitle}</h3>
-        <button class="border rounded-full px-3 py-2" on:click={()=>flipCard=false}>Back</button>
+      <div class="w-[85%] mx-auto">
+        <h3 class="text-xl">{backTitle}</h3>
+        <p class="my-4">{description}</p>
+        <button class="border shadow-xl  rounded-full px-3 py-2" on:click={()=>flipCard=false}>Back</button>
+      </div>
+        
     </div>
 
 </FlipCard>
