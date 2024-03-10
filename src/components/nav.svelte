@@ -8,8 +8,14 @@
   function toggleMenu() {
     if (!menuOpen) {
       menuOpen = true;
+      document.getElementById("wrapper")?.classList.remove("max-w-40");
+      document.getElementById("wrapper")?.classList.remove("max-h-16");
     } else {
       menuOpen = false;
+      setTimeout(() => {
+        document.getElementById("wrapper")?.classList.add("max-w-40");
+        document.getElementById("wrapper")?.classList.add("max-h-16");
+      }, 500);
     }
   }
 </script>
@@ -23,7 +29,7 @@
     class:md:animate-move-left-md={menuOpen}
     class:animate-move-right={!menuOpen}
     class:md:animate-move-right-md={!menuOpen}
-    class="bg-slate-200 h-16 dark:bg-slate-800 bg-opacity-80 rounded-[2em] w-40"
+    class="max-w-40 max-h-16 bg-slate-200 h-16 dark:bg-slate-800 bg-opacity-80 rounded-[2em] w-40"
   >
     <menu
       id="menuBlock"
