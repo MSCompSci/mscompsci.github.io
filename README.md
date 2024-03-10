@@ -15,3 +15,8 @@ I made this portfolio from scratch using the following:
 
 ## Design tools
 - [Canva](https://www.canva.com/)
+
+## TODO
+- Add museum video
+- Add project list on index
+- Add project page next project button
