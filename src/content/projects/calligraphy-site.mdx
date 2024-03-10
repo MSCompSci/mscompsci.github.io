@@ -2,7 +2,7 @@
 title: "Calligraphy Store Website"
 description: "An e-commerce website for a small calligraphy business"
 image:
-  url: "/src/images/3D-gallery/sibyl.png"
+  url: "/src/images/calligraphy-site/store.png"
   alt: "Alt"
 tags:
   [
@@ -16,6 +16,13 @@ tags:
     "Academic Project",
   ]
 ---
+
+import ZoomImg from "@components/zoomImg.svelte";
+
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/store.png" alt="" />
+  <figcaption>Store product page</figcaption>
+</figure>
 
 # Calligraphy Store Website
 
@@ -31,9 +38,19 @@ The aim of this project was to design a website that would achieve the goals of 
 
 Our stakeholders provided us with a few initial ideas for the website, such as wanting to use a botanical-inspired theme that makes use of handwritten or calligraphy-inspired fonts. Additionally, they provided us with a target demographic of middle-aged adults and a desired set of content, such as an About section with a mission statement and company history, a contact section with a form, and a shop section with products on display.
 
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/requirements.png" alt="" />
+  <figcaption>Provided requirements diagram</figcaption>
+</figure>
+
 ## Research Phase
 
 To support our design, we first performed some initial research to better determine the target audience of the design and the best terms for SEO. We investigated popular calligraphy Google search terms for the upstate NY area and found that terms such as journals, calligraphy, and custom pens were popular, particularly in areas with a high concentration of academic professionals. We compiled these findings into a list of SEO terms and an example user persona.
+
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/persona.png" alt="" />
+  <figcaption>User persona to represent target demographics</figcaption>
+</figure>
 
 ## Wireframe Design
 
@@ -41,9 +58,24 @@ A wireframe design was created based on this research. The home page features a 
 The products page features a list of products in several categories based on the popular search terms we discovered in the research phase. There is also the option for the user to search for a specific product, or filter products by price, sale status, category, or the ability to customize them.
 The About page contains a history of the company and its mission statement, as well as prominent imagery to personalize the brand. At this stage of the project, the contact form page was not required to be designed, as the wireframe was primarily intended to be a sample design.
 
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/wireframe-1.png" alt="" />
+  <figcaption>Wireframe of products page</figcaption>
+</figure>
+
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/sample-wireframes.png" alt="" class="bg-white p-4"/>
+  <figcaption>Sample wireframe sections</figcaption>
+</figure>
+
 ## Website Specification and Stakeholder Feedback
 
 We compiled our findings into a website specification document, along with an estimated budget and project timeline. Additionally, the document contained the finalized wireframe, proposed site map, and a proposed technical implementation plan for the website. The document received a positive response from our stakeholders with only a minor critique of the website footer design.
+
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/map.png" alt="" class="bg-white p-4"/>
+  <figcaption>Proposed site map</figcaption>
+</figure>
 
 ## Prototype Design
 
@@ -52,6 +84,21 @@ The higher-fidelity design took this feedback into account, and the footer desig
 The design was created with the intent of being aesthetically pleasing while also maintaining high readability for middle-aged and older adults who may encounter accessibility barriers with low-contrast themes or small text. A serif font was chosen for the page text to match the calligraphy-inspired theme while maintaining readability, and higher contrast colors and larger text were used when possible.
 
 This stage of the design expanded on the earlier wireframe by adding a contact page and by polishing existing content on the home and about pages. The contact page features an image of the storefront with relevant contact information, as well as a contact form and Google Maps interactive element. The About page was expanded to include additional information about the sales team and images of the owners to further add to the personality of the company brand.
+
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/store.png" alt=""/>
+  <figcaption>Products page</figcaption>
+</figure>
+
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/about.png" alt=""/>
+  <figcaption>About page</figcaption>
+</figure>
+
+<figure>
+  <ZoomImg client:load src="/src/images/calligraphy-site/contact.png" alt=""/>
+  <figcaption>Contact page</figcaption>
+</figure>
 
 ## Results
 
