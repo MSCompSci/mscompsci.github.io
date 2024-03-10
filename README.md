@@ -9,7 +9,6 @@ I made this portfolio from scratch using the following:
 - [Svelte](https://svelte.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
   - [Tailwindcss Typography](https://github.com/tailwindlabs/tailwindcss-typography)
-- [Medium Zoom](https://www.npmjs.com/package/medium-zoom)
 
 ## Styling
 

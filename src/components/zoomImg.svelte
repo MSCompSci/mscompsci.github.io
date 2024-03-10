@@ -1,52 +1,15 @@
-<script>
-  import mediumZoom from "medium-zoom";
-
-  export let src = undefined;
-  export let alt = undefined;
-  export let options = {
-    background: "dimgray",
-    opacity: 1,
-    margin: 0,
-    scrollOffset: 0,
-  };
-
-  let zoom = null;
-
-  function getZoom() {
-    if (zoom === null) {
-      zoom = mediumZoom(options);
-    }
-
-    return zoom;
-  }
-
-  function attachZoom(image) {
-    const zoom = getZoom();
-    zoom.attach(image);
-
-    zoom.on("open", (e) => {
-      document.getElementById("nav-header").classList.add("opacity-0");
-    });
-    zoom.on("closed", (e) => {
-      document.getElementById("nav-header").classList.remove("opacity-0");
-    });
-
-    return {
-      update(newOptions) {
-        zoom.update(newOptions);
-      },
-      destroy() {
-        zoom.detach();
-      },
-    };
-  }
+<script lang="ts">
+  export let src:string = "";
+  export let alt:string = "";
+  export let id:string = "";
+  let modal:HTMLDialogElement;
 </script>
-
-<img {src} {alt} {...$$restProps} use:attachZoom={options} />
-
-<style>
-  .medium-zoom-overlay,
-  .medium-zoom-image--opened {
-    z-index: 999;
-  }
-</style>
+<button aria-controls={id+"-modal"} class="bg-transparent peer rounded-xl sr-only  " on:click={()=>modal.showModal()}><span class="sr-only">Toggle image zoom</span></button>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<img {id} {src} {alt} class=" w-full peer-focus:border-4 border-slate-950 dark:border-slate-50 cursor-pointer hover:scale-[101%] " on:click={()=>modal.showModal()} />
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<dialog bind:this={modal} id={id+"-modal"} class="rounded-xl" on:click={()=>modal.close()}>
+  <img {id} {src} {alt} class="w-full peer-focus:border-4 border-slate-950 dark:border-slate-50"/>
+</dialog>
