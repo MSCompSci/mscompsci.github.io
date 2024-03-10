@@ -13,5 +13,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 <Main title={entry.data.title} desc={entry.data.description} ogTitle={entry.data.title}>
-    <Content></Content>
+  <article class=" mt-40 mx-auto p-8 rounded-2xl bg-gradient-to-br  prose prose-img:rounded-xl prose-slate dark:prose-invert">
+    <Content/>
+  </article>
 </Main>
