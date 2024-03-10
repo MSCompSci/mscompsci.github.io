@@ -6,34 +6,77 @@ image:
     alt: 'Alt'
 tags: ["UX Design","UI Design","Web Design","Prototyping","Wireframing","Figma","3D","Programming","Team Project","Academic Project"]
 ---
+import { Image } from 'astro:assets';
+import GalleryFloor from '@images/3D-gallery/gallery-floor.png'
+import Home from '@images/3D-gallery/home.png'
+import Madonna from '@images/3D-gallery/madonna.png'
+import Sibyl from '@images/3D-gallery/sibyl.png'
+import Wireframes from '@images/3D-gallery/wireframes.png'
+import Code from '@images/3D-gallery/code.png'
+import Prototype from '@images/3D-gallery/prototype.png'
+
+<figure>
+<Image src={Sibyl} alt="" ></Image>
+<figcaption>Michelangelo's the Delphic Sibyl</figcaption>
+</figure>
+
+
 # Michelangelo 3D Art Gallery
 
 ## Summary
 
-In this project, I collaborated with two other students to create a virtual art gallery that showcases a selection of Michelangelo's statues and paintings. I primarily contributed to the academic research, 3D design, and 3D programming aspects of the project.
+In this project, I collaborated with two other students to create a virtual art gallery that showcases a selection of Michelangelo's statues and paintings. I was the primary programmer and designer of the 3D portions of the website, and I also contributed to the 2D design, research, and website content curation.
 
 ## Project Scope
 
-The goal of this project was to create a virtual gallery or museum devoted to a topic of our choosing. The gallery was required to have a 2D standard website as well as a 3D virtual space that could be explored in some way. We were allowed to choose from a variety of methods to create this gallery, and my team decided to create a custom website instead of using a pre-made solution for added flexibility.
+The aim of this project was to create a virtual gallery or museum devoted to a topic of our choosing. We were required to create both a 2D standard website and a 3D virtual space that could be explored by users. We were allowed to choose from a variety of methods to create this gallery, and my team decided to create a custom website instead of using a pre-made solution for added flexibility.
 
 ## Research Phase
 
-The project began with an intitial research phase where we brainstormed several potential topics before narrowing our ideas down. We decided that Michelangelo's works would be appropriate for the project, because he is well-known and also created art in a variety of mediums.
+The project began with an initial research phase where we brainstormed several potential topics before narrowing our ideas down. We decided that Michelangelo's paintings and statues would be appropriate for the project because they are easily recognizable and they span 2D and 3D mediums. We then collected academic sources with relevant information about Michelangelo and his works for later content synthesis.
 
 ## Design
-
-We created an initial wireframe design to explore a number possible layouts for the 2D portions of the website. The website features a homepage, a timeline of the selected artworks, and a table of the external assets that were used in creating the website.
-
-Once the site structure and the general layout of the 2D portions of the website were decided upon, we created a higher-fidelity prototype to explore possible fonts, colors, and images for the website.
+We created an initial wireframe design to explore  possible layouts for the 2D portions of the website. We settled on a design that features a homepage, a timeline of the selected artworks, and a table of the external assets that were used in creating the website.
+Once the site structure and the general layout was decided upon, we created a higher-fidelity prototype to explore possible fonts, colors, and images for the website. We decided that neutral colors and fonts would complement the artwork without distracting from the content.
+<figure>
+<Image src={Wireframes} alt=""></Image>
+<figcaption>Proposed wireframe designs</figcaption>
+</figure>
+<figure>
+<Image src={Prototype} alt=""></Image>
+<figcaption>Prototype homepage</figcaption>
+</figure>
 
 ## Content Creation
 
-Content for the website was created from a wide variety of sources. The text for the website and each artwork were written collaboratively based on academic sources. Images for the paintings were primarily found via WikiMedia and other public domain or creative commons sources.
-
-The 3D assets were the most challenging to implement. The majority of the statues in the gallery were sourced from high-quality 3D scans of museum artworks that were uploaded to several 3D-printing-focused websites. These models were mostly untextured and unoptimized for web rendering. I was unfamiliar with the 3D modelling software Blender at the time, but I leveraged existing 3D modelling skills I had from my engineering degree to learn how to texture and optimize the models using Blender.
+We used a wide variety of sources in creating content for the website. The website text and artwork descriptions were written collaboratively based on a series of academic sources. Images of Michelangelo's paintings were primarily sourced via WikiMedia and other public domain or creative commons sources.
+The 3D assets were the most challenging to implement. The statues in the gallery were sourced from high-quality 3D scans of museum artworks that were uploaded to several 3D-printing-focused websites. These models were mostly untextured and unoptimized for web rendering. I was unfamiliar with the 3D modelling software Blender at the time, but I leveraged existing 3D modelling skills I had from my engineering degree to learn how to texture and optimize the models using Blender.
 
 ## Programming
 
-The majority of the 2D portions of the website were programmed by my teammates, while I programmed the 3D environment and artwork information popups.
-
+The majority of the 2D portions of the website were programmed by my teammates, while I programmed the 3D environment and artwork information popups. The 2D portions of the website and the gallery popups were created using HTML, CSS, and JavaScript. The 3D gallery was created using Three.js and TypeScript. Three.js is a JavaScript library devoted to 3D rendering, and TypeScript is a variation of JavaScript with additional features. We used GitHub to track our project and perform version management.
+<figure>
+<Image src={Code} alt=""></Image>
+<figcaption>Website code</figcaption>
+</figure>
 ## Results
+
+The finished product allows users to explore the 3D gallery and view Michelangelo's works to scale. The gallery includes paintings like the Sistine Chapel Ceiling and the Creation of Adam, and statues such as David and the Madonna of Burges. Users can also learn about the project and the various artworks through the traditional 2D website homepage and timeline, and they can find the original sources of the website assets on the resources page.
+<figure>
+<Image src={Home} alt=""></Image>
+<figcaption>Website homepage</figcaption>
+</figure>
+<figure>
+<Image src={GalleryFloor} alt=""></Image>
+<figcaption>The 3D Gallery Space</figcaption>
+</figure>
+<figure>
+<Image src={Madonna} alt=""></Image>
+<figcaption>The Madonna of Burges and the Sistine Chapel Ceiling</figcaption>
+</figure>
+## Demo Video
+<iframe class="mx-auto rounded-xl shadow w-full" width="560" height="315" src="https://www.youtube-nocookie.com/embed/YE7VzlLtp-4?si=KVoomNKpg8rcdWvO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Takeaways and Future Work
+
+This project was an invaluable learning experience for everyone on the team. My teammates and I expanded our skills with HTML and CSS, and it was a game-changing experience for my understanding of JavaScript and 3D applications.
+If given the opportunity to further this project, I feel that the greatest improvements could be made by polishing the website user interface to make the design more consistent, and by optimizing the 3D environment for computers with limited graphical hardware capabilities.
