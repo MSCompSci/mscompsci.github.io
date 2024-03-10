@@ -9,6 +9,7 @@ I made this portfolio from scratch using the following:
 - [Svelte](https://svelte.dev/)
 - [Tailwindcss](https://tailwindcss.com/)
   - [Tailwindcss Typography](https://github.com/tailwindlabs/tailwindcss-typography)
+- [Medium Zoom](https://www.npmjs.com/package/medium-zoom)
 
 ## Styling
 
@@ -22,5 +23,5 @@ I made this portfolio from scratch using the following:
 ## TODO
 
 - Add museum video
-- Fix light color scheme on projects and about section
+- Fix light color scheme in about section
 - Add project page next project button

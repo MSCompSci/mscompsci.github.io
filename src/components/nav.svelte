@@ -21,6 +21,7 @@
 </script>
 
 <header
+  id="nav-header"
   class=" fixed z-10 right-0 left-0 top-0 m-4 flex justify-end overflow-clip rounded-[2rem]"
 >
   <div

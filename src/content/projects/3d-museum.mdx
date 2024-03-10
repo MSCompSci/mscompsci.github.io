@@ -19,17 +19,10 @@ tags:
   ]
 ---
 
-import { Image } from "astro:assets";
-import GalleryFloor from "@images/3D-gallery/gallery-floor.png";
-import Home from "@images/3D-gallery/home.png";
-import Madonna from "@images/3D-gallery/madonna.png";
-import Sibyl from "@images/3D-gallery/sibyl.png";
-import Wireframes from "@images/3D-gallery/wireframes.png";
-import Code from "@images/3D-gallery/code.png";
-import Prototype from "@images/3D-gallery/prototype.png";
+import ZoomImg from "@components/zoomImg.svelte";
 
 <figure>
-  <Image src={Sibyl} alt=""></Image>
+  <ZoomImg client:load src="/src/images/3D-gallery/sibyl.png" alt="" />
   <figcaption>Michelangelo's the Delphic Sibyl</figcaption>
 </figure>
 
@@ -53,11 +46,11 @@ We created an initial wireframe design to explore possible layouts for the 2D po
 Once the site structure and the general layout was decided upon, we created a higher-fidelity prototype to explore possible fonts, colors, and images for the website. We decided that neutral colors and fonts would complement the artwork without distracting from the content.
 
 <figure>
-  <Image src={Wireframes} alt=""></Image>
+  <ZoomImg client:load src="/src/images/3D-gallery/wireframes.png" alt="" />
   <figcaption>Proposed wireframe designs</figcaption>
 </figure>
 <figure>
-  <Image src={Prototype} alt=""></Image>
+  <ZoomImg client:load src="/src/images/3D-gallery/prototype.png" alt="" />
   <figcaption>Prototype homepage</figcaption>
 </figure>
 
@@ -71,7 +64,7 @@ The 3D assets were the most challenging to implement. The statues in the gallery
 The majority of the 2D portions of the website were programmed by my teammates, while I programmed the 3D environment and artwork information popups. The 2D portions of the website and the gallery popups were created using HTML, CSS, and JavaScript. The 3D gallery was created using Three.js and TypeScript. Three.js is a JavaScript library devoted to 3D rendering, and TypeScript is a variation of JavaScript with additional features. We used GitHub to track our project and perform version management.
 
 <figure>
-  <Image src={Code} alt=""></Image>
+  <ZoomImg client:load src="/src/images/3D-gallery/code.png" alt="" />
   <figcaption>Website code</figcaption>
 </figure>
 ## Results
@@ -79,15 +72,15 @@ The majority of the 2D portions of the website were programmed by my teammates, 
 The finished product allows users to explore the 3D gallery and view Michelangelo's works to scale. The gallery includes paintings like the Sistine Chapel Ceiling and the Creation of Adam, and statues such as David and the Madonna of Burges. Users can also learn about the project and the various artworks through the traditional 2D website homepage and timeline, and they can find the original sources of the website assets on the resources page.
 
 <figure>
-  <Image src={Home} alt=""></Image>
+  <ZoomImg client:load src="/src/images/3D-gallery/home.png" alt="" />
   <figcaption>Website homepage</figcaption>
 </figure>
 <figure>
-  <Image src={GalleryFloor} alt=""></Image>
+  <ZoomImg client:load src="/src/images/3D-gallery/gallery-floor.png" alt="" />
   <figcaption>The 3D Gallery Space</figcaption>
 </figure>
 <figure>
-  <Image src={Madonna} alt=""></Image>
+  <ZoomImg client:load src="/src/images/3D-gallery/madonna.png" alt="" />
   <figcaption>The Madonna of Burges and the Sistine Chapel Ceiling</figcaption>
 </figure>
 ## Demo Video
