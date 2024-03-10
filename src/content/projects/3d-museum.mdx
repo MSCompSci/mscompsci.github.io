@@ -1,25 +1,37 @@
 ---
-title: 'Michelangelo 3D Art Gallery'
+title: "Michelangelo 3D Art Gallery"
 description: "An interactive 3D experience of Michelangelo's works."
-image: 
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
-    alt: 'Alt'
-tags: ["UX Design","UI Design","Web Design","Prototyping","Wireframing","Figma","3D","Programming","Team Project","Academic Project"]
+image:
+  url: "/src/images/3D-gallery/sibyl.png"
+  alt: "Alt"
+tags:
+  [
+    "UX Design",
+    "UI Design",
+    "Web Design",
+    "Prototyping",
+    "Wireframing",
+    "Figma",
+    "3D",
+    "Programming",
+    "Team Project",
+    "Academic Project",
+  ]
 ---
-import { Image } from 'astro:assets';
-import GalleryFloor from '@images/3D-gallery/gallery-floor.png'
-import Home from '@images/3D-gallery/home.png'
-import Madonna from '@images/3D-gallery/madonna.png'
-import Sibyl from '@images/3D-gallery/sibyl.png'
-import Wireframes from '@images/3D-gallery/wireframes.png'
-import Code from '@images/3D-gallery/code.png'
-import Prototype from '@images/3D-gallery/prototype.png'
+
+import { Image } from "astro:assets";
+import GalleryFloor from "@images/3D-gallery/gallery-floor.png";
+import Home from "@images/3D-gallery/home.png";
+import Madonna from "@images/3D-gallery/madonna.png";
+import Sibyl from "@images/3D-gallery/sibyl.png";
+import Wireframes from "@images/3D-gallery/wireframes.png";
+import Code from "@images/3D-gallery/code.png";
+import Prototype from "@images/3D-gallery/prototype.png";
 
 <figure>
-<Image src={Sibyl} alt="" ></Image>
-<figcaption>Michelangelo's the Delphic Sibyl</figcaption>
+  <Image src={Sibyl} alt=""></Image>
+  <figcaption>Michelangelo's the Delphic Sibyl</figcaption>
 </figure>
-
 
 # Michelangelo 3D Art Gallery
 
@@ -36,15 +48,17 @@ The aim of this project was to create a virtual gallery or museum devoted to a t
 The project began with an initial research phase where we brainstormed several potential topics before narrowing our ideas down. We decided that Michelangelo's paintings and statues would be appropriate for the project because they are easily recognizable and they span 2D and 3D mediums. We then collected academic sources with relevant information about Michelangelo and his works for later content synthesis.
 
 ## Design
-We created an initial wireframe design to explore  possible layouts for the 2D portions of the website. We settled on a design that features a homepage, a timeline of the selected artworks, and a table of the external assets that were used in creating the website.
+
+We created an initial wireframe design to explore possible layouts for the 2D portions of the website. We settled on a design that features a homepage, a timeline of the selected artworks, and a table of the external assets that were used in creating the website.
 Once the site structure and the general layout was decided upon, we created a higher-fidelity prototype to explore possible fonts, colors, and images for the website. We decided that neutral colors and fonts would complement the artwork without distracting from the content.
+
 <figure>
-<Image src={Wireframes} alt=""></Image>
-<figcaption>Proposed wireframe designs</figcaption>
+  <Image src={Wireframes} alt=""></Image>
+  <figcaption>Proposed wireframe designs</figcaption>
 </figure>
 <figure>
-<Image src={Prototype} alt=""></Image>
-<figcaption>Prototype homepage</figcaption>
+  <Image src={Prototype} alt=""></Image>
+  <figcaption>Prototype homepage</figcaption>
 </figure>
 
 ## Content Creation
@@ -55,27 +69,38 @@ The 3D assets were the most challenging to implement. The statues in the gallery
 ## Programming
 
 The majority of the 2D portions of the website were programmed by my teammates, while I programmed the 3D environment and artwork information popups. The 2D portions of the website and the gallery popups were created using HTML, CSS, and JavaScript. The 3D gallery was created using Three.js and TypeScript. Three.js is a JavaScript library devoted to 3D rendering, and TypeScript is a variation of JavaScript with additional features. We used GitHub to track our project and perform version management.
+
 <figure>
-<Image src={Code} alt=""></Image>
-<figcaption>Website code</figcaption>
+  <Image src={Code} alt=""></Image>
+  <figcaption>Website code</figcaption>
 </figure>
 ## Results
 
 The finished product allows users to explore the 3D gallery and view Michelangelo's works to scale. The gallery includes paintings like the Sistine Chapel Ceiling and the Creation of Adam, and statues such as David and the Madonna of Burges. Users can also learn about the project and the various artworks through the traditional 2D website homepage and timeline, and they can find the original sources of the website assets on the resources page.
+
 <figure>
-<Image src={Home} alt=""></Image>
-<figcaption>Website homepage</figcaption>
+  <Image src={Home} alt=""></Image>
+  <figcaption>Website homepage</figcaption>
 </figure>
 <figure>
-<Image src={GalleryFloor} alt=""></Image>
-<figcaption>The 3D Gallery Space</figcaption>
+  <Image src={GalleryFloor} alt=""></Image>
+  <figcaption>The 3D Gallery Space</figcaption>
 </figure>
 <figure>
-<Image src={Madonna} alt=""></Image>
-<figcaption>The Madonna of Burges and the Sistine Chapel Ceiling</figcaption>
+  <Image src={Madonna} alt=""></Image>
+  <figcaption>The Madonna of Burges and the Sistine Chapel Ceiling</figcaption>
 </figure>
 ## Demo Video
-<iframe class="mx-auto rounded-xl shadow w-full" width="560" height="315" src="https://www.youtube-nocookie.com/embed/YE7VzlLtp-4?si=KVoomNKpg8rcdWvO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe
+  class="mx-auto rounded-xl shadow w-full"
+  width="560"
+  height="315"
+  src="https://www.youtube-nocookie.com/embed/YE7VzlLtp-4?si=KVoomNKpg8rcdWvO"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
 ## Takeaways and Future Work
 
 This project was an invaluable learning experience for everyone on the team. My teammates and I expanded our skills with HTML and CSS, and it was a game-changing experience for my understanding of JavaScript and 3D applications.

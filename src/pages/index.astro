@@ -3,41 +3,85 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Main from "@layouts/main.astro";
 import { Image } from "astro:assets";
 import Avatar from "@images/Avatar1k.png";
-import IconCard from '@components/iconCard.svelte'
-import PhoneHero from '@images/PhoneHero.svg'
-import FlipCardHover from '@components/flipCardHover.svelte'
-import BackgroundCard from '@components/backgroundCard.svelte'
+import IconCard from "@components/iconCard.svelte";
+import PhoneHero from "@images/PhoneHero.svg";
+import FlipCardHover from "@components/flipCardHover.svelte";
+import BackgroundCard from "@components/backgroundCard.svelte";
+import CollectionList from "@components/collectionList.svelte";
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
 type IconButton = [
-    { item: string; icon: string; desc: string },
-    { item: string; icon: string; desc: string },
-    { item: string; icon: string; desc: string },
-    { item: string; icon: string; desc: string },
-  ];
+  { item: string; icon: string; desc: string },
+  { item: string; icon: string; desc: string },
+  { item: string; icon: string; desc: string },
+  { item: string; icon: string; desc: string },
+];
 const title = "Home";
 const desc = "Molly Scott's UX design and research portfolio";
 const ogTitle = "My Portfolio";
-const tools:IconButton = [{item:"Figma",icon:"fa-brands fa-figma", desc:"I use Figma to create website prototypes and wireframes."},{item:"GitHub",icon:"fa-brands fa-github", desc:"I use GitHub for tracking projects and version control."},{item:"Linux",icon:"fa-brands fa-linux",desc:"I use Linux on my personal computer and hobby home servers."},{item:"Miro",icon:"fa-regular fa-note-sticky",desc:"I use Miro to plan projects and share UX insights."}]
-const backs:IconButton = [{item:"Engineering",icon:"fa-solid fa-gear fa-xl", desc:"I have a B.S. in electro-mechanical engineering technology."},{item:"Robotics",icon:"fa-solid fa-robot fa-xl", desc:"I've created nationally-competing autonomous robots."},{item:"Philosophy",icon:"fa-solid fa-brain fa-xl",desc:"I minored in philosophy, focusing on eastern traditions and neuroscience."},{item:"Leadership",icon:"fa-solid fa-hand-holding-heart fa-xl",desc:"I've lead two student organizations with 60+ members."}]
+const tools: IconButton = [
+  {
+    item: "Figma",
+    icon: "fa-brands fa-figma",
+    desc: "I use Figma to create website prototypes and wireframes.",
+  },
+  {
+    item: "GitHub",
+    icon: "fa-brands fa-github",
+    desc: "I use GitHub for tracking projects and version control.",
+  },
+  {
+    item: "Linux",
+    icon: "fa-brands fa-linux",
+    desc: "I use Linux on my personal computer and hobby home servers.",
+  },
+  {
+    item: "Miro",
+    icon: "fa-regular fa-note-sticky",
+    desc: "I use Miro to plan projects and share UX insights.",
+  },
+];
+const backs: IconButton = [
+  {
+    item: "Engineering",
+    icon: "fa-solid fa-gear fa-xl",
+    desc: "I have a B.S. in electro-mechanical engineering technology.",
+  },
+  {
+    item: "Robotics",
+    icon: "fa-solid fa-robot fa-xl",
+    desc: "I've created nationally-competing autonomous robots.",
+  },
+  {
+    item: "Philosophy",
+    icon: "fa-solid fa-brain fa-xl",
+    desc: "I minored in philosophy, focusing on eastern traditions and neuroscience.",
+  },
+  {
+    item: "Leadership",
+    icon: "fa-solid fa-hand-holding-heart fa-xl",
+    desc: "I've lead two student organizations with 60+ members.",
+  },
+];
 ---
 
 <Main title={title} desc={desc} ogTitle={ogTitle}>
   <section
     id="home"
-    class=" scroll-mt-20 content-center  max-w-screen-xl min-h-screen w-[90%] mx-auto lg:grid lg:grid-cols-[2fr_4fr]"
+    class="scroll-mt-20 content-center max-w-screen-xl min-h-screen w-[90%] mx-auto lg:grid lg:grid-cols-[2fr_4fr]"
   >
-  <div class="z-0 h-full pl-20 pb-8 col-start-2 row-start-1 row-span-3 ">
-    <Image
-      src={PhoneHero}
-      alt="3D render of phone with abstract background"
-      loading={"eager"}
-    >
-    </Image>
-  </div>
+    <div class="z-0 h-full pl-20 pb-8 col-start-2 row-start-1 row-span-3">
+      <Image
+        src={PhoneHero}
+        alt="3D render of phone with abstract background"
+        loading={"eager"}
+      />
+    </div>
     <div
       class="h-fit grid grid-cols-3 md:grid-cols-9 grid-rows-2 gap-6 col-start-1 row-span-1 row-start-2"
     >
       <h1
-        class=" bg-slate-50 dark:bg-slate-700 md:col-start-2 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-1 text-4xl md:text-5xl px-12 py-8 w-fit border-2 rounded-full"
+        class="bg-slate-50 dark:bg-slate-700 md:col-start-2 text-nowrap col-span-3 sm:col-span-2 h-fit row-start-1 text-4xl md:text-5xl px-12 py-8 w-fit border-2 rounded-full"
       >
         Hi, I'm Molly
       </h1>
@@ -47,7 +91,6 @@ const backs:IconButton = [{item:"Engineering",icon:"fa-solid fa-gear fa-xl", des
         I'm a UX designer
       </p>
     </div>
-
   </section>
   <section id="about" class="scroll-mt-20 mt-96">
     <div
@@ -60,24 +103,32 @@ const backs:IconButton = [{item:"Engineering",icon:"fa-solid fa-gear fa-xl", des
         class="max-w-[75%] sm:max-w-[90%] 2xl:max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 items-center"
       >
         <!-- Avatar -->
-        <FlipCardHover position="ol-span-1 row-span-1 lg:col-start-2 lg:row-start-1">
+        <FlipCardHover
+          position="ol-span-1 row-span-1 lg:col-start-2 lg:row-start-1"
+        >
           <Image
-              src={Avatar}
-              alt="Cartoon avatar of Molly Scott"
-              class="rounded-2xl"
-              slot="front"
-              loading={"eager"}
-            />
-            <h3 class="text-center text-4xl" slot="back" >Hi there!</h3>
+            src={Avatar}
+            alt="Cartoon avatar of Molly Scott"
+            class="rounded-2xl"
+            slot="front"
+            loading={"eager"}
+          />
+          <h3 class="text-center text-4xl" slot="back">Hi there!</h3>
         </FlipCardHover>
 
         <!-- Tools -->
         <!-- TODO Add gradient background -->
-        <IconCard client:load title="My Favorite Tools" items={tools} position="lg:col-start-1 lg:row-start-1" background=" bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800" ></IconCard>
-        
+        <IconCard
+          client:load
+          title="My Favorite Tools"
+          items={tools}
+          position="lg:col-start-1 lg:row-start-1"
+          background=" bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800"
+        />
+
         <!-- Skills -->
         <div
-          class=" border shadow-xl dark:border-slate-700 bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800 rounded-2xl w-full aspect-square flex flex-col items-center justify-center sm:self-start sm:row-span-2 lg:col-start-3 lg:row-start-1 lg:aspect-auto sm:h-full sm:justify-start"
+          class="border shadow-xl dark:border-slate-700 bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800 rounded-2xl w-full aspect-square flex flex-col items-center justify-center sm:self-start sm:row-span-2 lg:col-start-3 lg:row-start-1 lg:aspect-auto sm:h-full sm:justify-start"
         >
           <h3
             class="text-center mx-auto h-fit w-fit text-2xl my-3 sm:mt-10 sm:mb-8"
@@ -88,17 +139,17 @@ const backs:IconButton = [{item:"Engineering",icon:"fa-solid fa-gear fa-xl", des
             class="w-[70%] pb-2 text-xl items-center aspect-square mx-auto grid grid-cols-1 gap-2 sm:gap-y-6"
           >
             <li
-              class=" dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700  border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
               Collaboration
             </li>
             <li
-              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700  border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
               Communication
             </li>
             <li
-              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700  border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
             >
               User Interviews
             </li>
@@ -118,35 +169,63 @@ const backs:IconButton = [{item:"Engineering",icon:"fa-solid fa-gear fa-xl", des
               Wireframing
             </li>
             <li
-            class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
-          >
-            Programming
-          </li>
-          <li
-          class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
-        >
-          Organization
-        </li>
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+            >
+              Programming
+            </li>
+            <li
+              class="dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 border text-center rounded-full py-1 px-5 w-full lg:w-full h-fit"
+            >
+              Organization
+            </li>
           </ul>
         </div>
-        <!-- Background -->       
-        <BackgroundCard client:load title="My Background" items={backs} ></BackgroundCard>
+        <!-- Background -->
+        <BackgroundCard client:load title="My Background" items={backs} />
       </div>
     </div>
   </section>
   <section id="projects" class="scroll-mt-20 min-h-screen mt-96">
     <h2 class="text-center text-5xl pt-36">My Projects</h2>
     <hr class="w-56 mx-auto my-6 border-slate-500" />
+    <div class="grid gap-4 w-[80%] mx-auto">
+      {
+        projects.map((proj) => (
+          <div class="hover:scale-[102%]">
+            <a href={`/projects/${proj.slug}/`}>
+              <img
+                class="rounded-xl shadow border dark:border-slate-700"
+                src={proj.data.image.url}
+                alt={proj.data.image.alt}
+              />
+              <div class=" text-xl relative z-[1] bottom-4 rounded-b-xl text-center bg-gradient-to-b from-slate-50 to-slate-300 dark:from-slate-600 dark:to-slate-700 py-8">
+                {proj.data.title}
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
   </section>
   <section id="contact" class="scroll-mt-20 min-h-screen mt-96">
     <h2 class="text-center text-5xl pt-36">Contact Me</h2>
     <hr class="w-56 mx-auto my-6 border-slate-500" />
-    <div class=" mt-20 shadow-lg bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 dark:border-slate-800 w-56 h-72 rounded-2xl border mx-auto flex flex-col justify-center gap-4 items-center">
-      <a class="border p-3 flex rounded-lg bg-slate-100 dark:bg-slate-600 dark:border-slate-600 shadow hover:scale-105" title="LinkedIn" href="https://www.linkedin.com/in/molly-scott-ux/">
+    <div
+      class="mt-20 shadow-lg bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 dark:border-slate-800 w-56 h-72 rounded-2xl border mx-auto flex flex-col justify-center gap-4 items-center"
+    >
+      <a
+        class="border p-3 flex rounded-lg bg-slate-100 dark:bg-slate-600 dark:border-slate-600 shadow hover:scale-105"
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/molly-scott-ux/"
+      >
         <i aria-hidden="true" class="fa-brands fa-linkedin fa-2x"></i>
         <span class="sr-only">My LinkedIn profile</span>
       </a>
-      <a class="border p-3 flex rounded-lg bg-slate-100 dark:bg-slate-600 dark:border-slate-600 shadow hover:scale-105" title="GitHub" href="https://github.com/MSCompSci">
+      <a
+        class="border p-3 flex rounded-lg bg-slate-100 dark:bg-slate-600 dark:border-slate-600 shadow hover:scale-105"
+        title="GitHub"
+        href="https://github.com/MSCompSci"
+      >
         <i aria-hidden="true" class="fa-brands fa-github fa-2x"></i>
         <span class="sr-only">My GitHub profile</span>
       </a>

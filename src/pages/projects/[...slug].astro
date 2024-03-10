@@ -1,19 +1,41 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import Main from "@layouts/main.astro";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export async function getStaticPaths() {
-  const projEntries = await getCollection('projects');
-  return projEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  const projEntries = await getCollection("projects");
+  return projEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<Main title={entry.data.title} desc={entry.data.description} ogTitle={entry.data.title}>
-  <article class=" mt-40 mx-auto p-8 rounded-2xl bg-gradient-to-br  prose prose-img:rounded-xl prose-slate dark:prose-invert">
-    <Content/>
+
+<Main
+  title={entry.data.title}
+  desc={entry.data.description}
+  ogTitle={entry.data.title}
+>
+  <nav class="mt-24 border rounded-full w-fit py-4 px-8 ml-16 shadow">
+    <ul class="flex flex-row gap-4">
+      <li>
+        <a class="hover:" href="/">Home</a>
+      </li>
+      <span>
+        <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
+      </span>
+      <li>
+        <a href=`/projects/${entry.slug}/`>{entry.data.title}</a>
+      </li>
+    </ul>
+  </nav>
+  <article
+    class="my-10 mx-auto p-8 rounded-2xl bg-gradient-to-br prose prose-img:rounded-xl prose-slate dark:prose-invert"
+  >
+    <Content />
   </article>
 </Main>
