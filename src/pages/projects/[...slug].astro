@@ -20,7 +20,9 @@ const { Content } = await entry.render();
   desc={entry.data.description}
   ogTitle={entry.data.title}
 >
-  <nav class="mt-28 border rounded-full w-fit mx-auto p-4 shadow">
+  <nav
+    class="mt-28 border dark:border-slate-800 rounded-full w-fit md:w-[75%] mx-auto md:mb-12 py-4 px-6 shadow"
+  >
     <ul class="flex flex-row gap-4">
       <li>
         <a class="hover:" href="/">Home</a>
@@ -33,9 +35,13 @@ const { Content } = await entry.render();
       </li>
     </ul>
   </nav>
-  <article
-    class="my-4 mx-auto p-8 rounded-2xl bg-gradient-to-br prose prose-img:rounded-xl prose-slate dark:prose-invert"
+  <div
+    class="my-4 sm:w-[80%] w-[95%] border border-slate-200 shadow mx-auto p-4 md:p-16 mb-20 rounded-2xl bg-gradient-to-br"
   >
-    <Content />
-  </article>
+    <article
+      class="mx-auto prose w-full prose-img:rounded-xl prose-slate dark:prose-invert"
+    >
+      <Content />
+    </article>
+  </div>
 </Main>
