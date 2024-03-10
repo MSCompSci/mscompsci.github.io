@@ -23,5 +23,4 @@ I made this portfolio from scratch using the following:
 ## TODO
 
 - Add museum video
-- Fix light color scheme in about section
 - Add project page next project button
