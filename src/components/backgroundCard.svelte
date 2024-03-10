@@ -29,7 +29,7 @@
 <!-- <div class=""> -->
 <div
   id="bg-div"
-  class=" shadow-xl border bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800 dark:border-slate-700 rounded-2xl w-full aspect-square flex flex-col items-center justify-center sm:row-span-2 lg:col-start-1 lg:row-start-2 lg:col-span-2 lg:aspect-[2/1] lg:row-span-1"
+  class=" shadow-xl border border-slate-300 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 dark:border-slate-700 rounded-2xl w-full aspect-square flex flex-col items-center justify-center sm:row-span-2 lg:col-start-1 lg:row-start-2 lg:col-span-2 lg:aspect-[2/1] lg:row-span-1"
 >
   <h3 class="text-center mx-auto h-fit w-fit text-2xl my-8">{title}</h3>
   <ul
@@ -37,7 +37,7 @@
   >
     {#each items as item}
       <li
-        class=" flip-card border dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 hover:from-slate-200 hover:to-slate-300 dark:hover:from-slate-700 dark:hover:to-slate-800 dark:hover:border-slate-800 rounded-2xl w-full text-center"
+        class=" flip-card border border-slate-300 dark:border-slate-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-600 dark:to-slate-700 hover:from-slate-300 hover:to-slate-400 dark:hover:from-slate-700 dark:hover:to-slate-800 dark:hover:border-slate-800 rounded-2xl w-full text-center"
       >
         <div
           id={item.item + "-fc"}

@@ -1,7 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import { ViewTransitions } from "astro:transitions";
-import '@styles/main.css';
+import "@styles/main.css";
 interface Props {
   title: string;
   desc: string;
@@ -94,7 +94,7 @@ const { title, desc, ogTitle } = Astro.props;
     </script>
   </head>
   <body
-    class="font-poppins min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 opacity-0 transition-opacity duration-[0.4s]"
+    class="font-poppins min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 dark:from-slate-700 dark:to-slate-800 opacity-0 transition-opacity duration-[0.4s]"
   >
     <script is:inline>
       document.body.classList.add("opacity-0");

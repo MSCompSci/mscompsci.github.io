@@ -29,11 +29,11 @@
     class:md:animate-move-left-md={menuOpen}
     class:animate-move-right={!menuOpen}
     class:md:animate-move-right-md={!menuOpen}
-    class="max-w-40 max-h-16 bg-slate-200 h-16 dark:bg-slate-800 bg-opacity-80 rounded-[2em] w-40"
+    class="max-w-40 max-h-16 bg-slate-200 h-16 dark:bg-slate-800 rounded-[2em] w-40"
   >
     <menu
       id="menuBlock"
-      class="mr-0 ml-auto h-16 bg-slate-300 w-40 rounded-l-[2rem] dark:bg-slate-900 flex justify-center p-2 gap-2"
+      class="mr-0 ml-auto h-16 bg-slate-200 border border-slate-300 dark:border-slate-800 w-40 rounded-l-[2rem] dark:bg-slate-900 flex justify-center p-2 gap-2"
     >
       <li class="self-center">
         <DarkMode />
@@ -43,7 +43,7 @@
           on:click={toggleMenu}
           aria-controls="navMenu"
           title="Menu"
-          class=" hover:scale-105 h-11 w-11 rounded-full bg-slate-100 border-slate-300 shadow dark:border-slate-800 border text-slate-950 dark:bg-slate-700 dark:text-slate-50"
+          class=" hover:scale-105 h-11 w-11 rounded-full bg-slate-100 border-slate-300 shadow-xl dark:border-slate-800 border text-slate-950 dark:bg-slate-700 dark:text-slate-50"
         >
           <i aria-hidden="true" class="fa-solid fa-xl fa-bars"></i>
           <span class="sr-only">Main menu</span>
@@ -61,7 +61,7 @@
       >
         {#each links as link}
           <li
-            class="md:w-48 w-full text-lg text-slate-950 shadow dark:text-slate-50 hover:scale-105 hover:bg-slate-100 dark:hover:bg-slate-600 border-2 border-slate-600 dark:border-slate-500 rounded-full"
+            class="md:w-48 w-full text-lg text-slate-950 shadow-lg dark:text-slate-50 hover:scale-105 hover:bg-slate-100 dark:hover:bg-slate-600 border border-slate-400 dark:border-slate-500 rounded-full"
           >
             <a
               title={link}
