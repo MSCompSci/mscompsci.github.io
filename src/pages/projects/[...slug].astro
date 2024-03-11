@@ -21,7 +21,7 @@ const { Content } = await entry.render();
   ogTitle={entry.data.title}
 >
   <nav
-    class="mt-28 border dark:border-slate-800 rounded-full w-fit md:w-[75%] mx-auto md:mb-12 py-4 px-6 shadow"
+    class="mt-28 border dark:border-slate-800 rounded-full w-fit md:w-[85%] max-w-screen-xl  mx-auto md:mb-12 py-4 px-6 shadow"
   >
     <ul class="flex flex-row gap-4">
       <li>
@@ -30,16 +30,16 @@ const { Content } = await entry.render();
       <span>
         <i aria-hidden="true" class="fa-solid fa-chevron-right"></i>
       </span>
-      <li>
-        <a href=`/projects/${entry.slug}/`>{entry.data.title}</a>
+      <li class="max-w-48 sm:max-w-fit text-ellipsis overflow-hidden ">
+        <a href=`/projects/${entry.slug}/` class=" text-nowrap ">{entry.data.title}</a>
       </li>
     </ul>
   </nav>
   <div
-    class="my-4 sm:w-[80%] w-[95%] border border-slate-200 dark:border-slate-800 shadow mx-auto p-4 md:p-16 mb-20 rounded-2xl bg-gradient-to-br"
+    class="my-4 sm:w-[80%] w-[95%] max-w-screen-xl border border-slate-200 dark:border-slate-800 shadow mx-auto p-4 md:p-16 mb-20 rounded-2xl bg-gradient-to-br"
   >
     <article
-      class="mx-auto prose w-full prose-img:rounded-xl prose-img:my-0 prose-slate dark:prose-invert"
+      class="mx-auto prose w-full  prose-img:rounded-xl prose-img:my-0 prose-slate dark:prose-invert"
     >
       <Content />
     </article>
