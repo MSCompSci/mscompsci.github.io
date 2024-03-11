@@ -21,5 +21,5 @@ I made this portfolio from scratch using the following:
 
 ## TODO
 
-- Add museum video
+- Change video thumbnail to be correct size
 - Add project page next project button
