@@ -22,9 +22,25 @@ tags:
 ---
 
 import ZoomImg from "@components/zoomImg.svelte";
+import { Image } from 'astro:assets';
+import Thumb from '@images/fitness-app/thumbnail.png'
+import Find from '@images/fitness-app/findings.png'
+import Aff from '@images/fitness-app/affinity.png'
+import Persona from '@images/fitness-app/persona.png'
+import Wire from '@images/fitness-app/wireframes.png'
+import Fant from '@images/fitness-app/fantasy.png'
+import Fit from '@images/fitness-app/fitness.png'
+import A1 from '@images/fitness-app/A1.png'
+import B1 from '@images/fitness-app/B1.png'
+import Pref from '@images/fitness-app/preference.png'
+import Mis from '@images/fitness-app/misclicks.png'
+import Time from '@images/fitness-app/time.png'
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/thumbnail.png" alt="" />
+      <ZoomImg client:load>
+    <Image loading="eager" client:load slot="image" src={Thumb} alt="" />
+    <Image client:load slot="expanded-image" src={Thumb} alt="" />
+  </ZoomImg>
   <figcaption>The Workout Wizard fitness app</figcaption>
 </figure>
 
@@ -45,7 +61,10 @@ The purpose of this project was to create an application of our choosing and the
 To form the basis of our design, we examined a variety of academic articles on the impacts of fitness apps on user health journeys and attitudes. We also examined common elements in existing fitness and wellness applications to uncover common themes. We interviewed a set of participants to discover their preferences and existing attitudes toward fitness and wellness, and we conducted a card sort to determine what elements they believed to be the most important in their fitness journeys. We also asked them to perform a set of usability tasks on these apps, such as creating an account and logging in, to determine opportunities for our app to improve upon the user experience of these apps.
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/findings.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Find} alt="" />
+    <Image client:load slot="expanded-image" src={Find} alt="" />
+  </ZoomImg>
   <figcaption>Our collected initial findings</figcaption>
 </figure>
 
@@ -54,12 +73,18 @@ To form the basis of our design, we examined a variety of academic articles on t
 We then compiled the results of this research into an affinity diagram. This allowed us to group our discoveries into different opportunities for improvement and uncover user sentiments and preferences. We then used this information to prioritize the features we should include in our design and generate a set of five user personas to represent our target users.
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/affinity.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Aff} alt="" />
+    <Image client:load slot="expanded-image" src={Aff} alt="" />
+  </ZoomImg>
   <figcaption>The affinity diagram and priority chart</figcaption>
 </figure>
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/persona.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Persona} alt="" />
+    <Image client:load slot="expanded-image" src={Persona} alt="" />
+  </ZoomImg>
   <figcaption>Our primary user persona</figcaption>
 </figure>
 
@@ -68,24 +93,33 @@ We then compiled the results of this research into an affinity diagram. This all
 After this analysis, we designed a set of wireframes. We created user flows where users can log in or create an account, monitor their character's stats, log workouts, and read articles to boost their knowledge and take quizzes on those articles.
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/wireframes.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Wire} alt="" />
+    <Image client:load slot="expanded-image" src={Wire} alt="" />
+  </ZoomImg>
   <figcaption>Wireframes for the Login, Home, Workout History, and Knowledge Articles screens</figcaption>
 </figure>
 
 ## Design Refinement
 
-We then refined our design without external user input by completing a cognitive walkthrough of the design followed by a heuristic evaluation following <a href="https://uxdesign.cc/ux-psychology-principles-seven-fundamental-design-principles-39c420a05f84">Don Norman's 7 design principles.</a> Our analysis discovered room for improvement in providing feedback and context to users on the login screen and during the process of logging a workout. We also recognized at this stage that some elements did not look clickable with the existing color contrast, and that this should be rectified when selecting colors for the high-fidelity design.
+We then refined our design without external user input by completing a cognitive walkthrough of the design followed by a heuristic evaluation following <a target="_blank" href="https://uxdesign.cc/ux-psychology-principles-seven-fundamental-design-principles-39c420a05f84">Don Norman's 7 design principles.</a> Our analysis discovered room for improvement in providing feedback and context to users on the login screen and during the process of logging a workout. We also recognized at this stage that some elements did not look clickable with the existing color contrast, and that this should be rectified when selecting colors for the high-fidelity design.
 
 ## Prototype Design
 
 We used these discoveries to develop a high-fidelity prototype for each theme. The fantasy-themed version features a knight for the user's character and uses humorous names for the different character stats. It also features fantasy-themed icons and a wizard character for the menu button. The standard fitness theme uses a character with fitness attire and standard names for the various stats. It also uses standard icons and a typical hamburger icon for the menu.
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/fantasy.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Fant} alt="" />
+    <Image client:load slot="expanded-image" src={Fant} alt="" />
+  </ZoomImg>
   <figcaption>Fantasy-themed prototype for the Login, Home, and Workout History screens</figcaption>
 </figure>
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/fitness.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Fit} alt="" />
+    <Image client:load slot="expanded-image" src={Fit} alt="" />
+  </ZoomImg>
   <figcaption>Fitness-themed prototype for the Login, Home, and Workout History screens</figcaption>
 </figure>
 
@@ -96,11 +130,17 @@ We then used these prototypes to conduct usability testing for two task flows. T
 We conducted this testing using the Maze platform via its Figma plugin. Participants completed each flow for the fantasy version followed by the fitness version and then ranked their perception of the difficulty of the task on a Likert scale. At the end of the test, participants were asked to choose their preferred theme. In addition to this feedback, the Maze platform also provided analytics on user misclicks, a user click heatmap, and the time participants took to complete each task flow.
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/A1.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={A1} alt="" />
+    <Image client:load slot="expanded-image" src={A1} alt="" />
+  </ZoomImg>
   <figcaption>Example of user click heatmap from the fantasy-themed version</figcaption>
 </figure>
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/B1.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={B1} alt="" />
+    <Image client:load slot="expanded-image" src={B1} alt="" />
+  </ZoomImg>
   <figcaption>Example of user click heatmap from the fitness-themed version</figcaption>
 </figure>
 
@@ -109,15 +149,24 @@ We conducted this testing using the Maze platform via its Figma plugin. Particip
 The 10 participants surveyed reported an equal preference for both themes. On average, participants found the tasks more difficult on the fantasy-themed version, and they were also more likely to misclick and take longer to complete each task on the fantasy version.
 
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/preference.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Pref} alt="" />
+    <Image client:load slot="expanded-image" src={Pref} alt="" />
+  </ZoomImg>
   <figcaption>Results of the user theme preference poll</figcaption>
 </figure>
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/misclicks.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Mis} alt="" />
+    <Image client:load slot="expanded-image" src={Mis} alt="" />
+  </ZoomImg>
   <figcaption>Comparison of user misclicks by theme version</figcaption>
 </figure>
 <figure>
-  <ZoomImg client:load src="/src/images/fitness-app/time.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Time} alt="" />
+    <Image client:load slot="expanded-image" src={Time} alt="" />
+  </ZoomImg>
   <figcaption>Comparison of task completion times by theme version</figcaption>
 </figure>
 

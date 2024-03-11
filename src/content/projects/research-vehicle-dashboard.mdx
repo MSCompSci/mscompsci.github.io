@@ -16,9 +16,17 @@ tags:
 ---
 
 import ZoomImg from "@components/zoomImg.svelte";
+import { Image } from 'astro:assets';
+import Page from '@images/dashboard/page.png'
+import Post from '@images/dashboard/poster.png'
+import Ads from '@images/dashboard/ads.png'
+import Vehicle from '@images/dashboard/RO3QET.jpg'
 
 <figure>
-  <ZoomImg client:load src="/src/images/dashboard/page.png" alt="" />
+    <ZoomImg client:load>
+    <Image  loading="eager" client:load slot="image" src={Page} alt="" />
+    <Image client:load slot="expanded-image" src={Page} alt="" />
+  </ZoomImg>
   <figcaption>The dashboard for the RO3QET research vehicle</figcaption>
 </figure>
 
@@ -43,7 +51,10 @@ The team I was working with required a website that would allow them to monitor 
 The website needed to be lightweight because the research vehicle is often taken into the field where the internet connection quality is poor. It also needed to have links to important information and manuals for the LIDAR system and its operation, as well as related links for the TOLNet system and the university.
 
 <figure>
-  <ZoomImg client:load src="/src/images/dashboard/RO3QET.jpg" alt="" />
+    <ZoomImg client:load>
+    <Image client:load slot="image" src={Vehicle} alt="" />
+    <Image client:load slot="expanded-image" src={Vehicle} alt="" />
+  </ZoomImg>
   <figcaption>The RO3QET research vehicle</figcaption>
 </figure>
 
@@ -54,7 +65,10 @@ The website was designed with a basic table layout that displays the data from o
 The header of the website features links to additional information about the project, the TOLNet website, the university website, and links to the other laser status pages. The footer features the logo of TOLNet and the RO3QET, as well as a manual and operation guide for the laser equipment.
 
 <figure>
-  <ZoomImg client:load src="/src/images/dashboard/page.png" alt="" />
+    <ZoomImg client:load>
+    <Image client:load slot="image" src={Page} alt="" />
+    <Image client:load slot="expanded-image" src={Page} alt="" />
+  </ZoomImg>
   <figcaption>The dashboard for the RO3QET research vehicle</figcaption>
 </figure>
 
@@ -73,13 +87,19 @@ The command line interface successfully allows the research team to control the 
 The results of this research were compiled into a poster at the end of the REU for a presentation attended by fellow University of Alabama Huntsville faculty and NASA/TOLNet researchers. Following this, I presented the research abstract and an expanded poster at national conferences for the American Geophysical Union and the American Meteorological Society.
 
 <figure>
-  <ZoomImg client:load src="/src/images/dashboard/poster.png" alt="" />
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Post} alt="" />
+    <Image client:load slot="expanded-image" src={Post} alt="" />
+  </ZoomImg>
   <figcaption>Poster presented at the REU poster session</figcaption>
 </figure>
 
 <figure>
-  <ZoomImg client:load src="/src/images/dashboard/ads.png" alt="" />
-  <figcaption>The research abstract <a href="https://ui.adsabs.harvard.edu/">(via the Harvard Astrophysics Data System)</a> </figcaption>
+      <ZoomImg client:load>
+    <Image client:load slot="image" src={Ads} alt="" />
+    <Image client:load slot="expanded-image" src={Ads} alt="" />
+  </ZoomImg>
+  <figcaption>The research abstract <a target="_blank" href="https://ui.adsabs.harvard.edu/">(via the Harvard Astrophysics Data System)</a> </figcaption>
 </figure>
 
 ## Takeaways and Future Work
