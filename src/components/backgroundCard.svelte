@@ -55,7 +55,7 @@
               <div>{item.item}</div>
             </button>
           </div>
-          <div class="flip-card-back w-full h-full dark:border-slate-700">
+          <div class="flip-card-back w-full h-full dark:border-slate-700 bg-slate-200 dark:bg-slate-600">
             <div class="w-full flex mt-1">
               <button
                 class="border border-slate-600 shadow-xl aspect-square h-fit w-8 rounded-full ml-2"

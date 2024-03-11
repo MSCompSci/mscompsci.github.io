@@ -14,7 +14,7 @@
       <slot name="front" />
     </div>
     <div
-      class="flip-card-back flex items-center justify-center border-slate-300 dark:border-slate-700"
+      class="flip-card-back flex items-center justify-center bg-slate-200 dark:bg-slate-600 border-slate-300 dark:border-slate-700"
     >
       <slot name="back" />
     </div>
