@@ -1,0 +1,27 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+   imagePath: string;
+   altText: string;
+   title:string;
+   link:string;
+}
+
+const { imagePath, altText, title, link } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/**/*.{jpeg,jpg,png,gif}');
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/images/**/*.{jpeg,jpg,png,gif}"`);
+---
+
+<div class="hover:scale-[102%]">
+    <a href={link}>
+        <Image class="rounded-xl shadow border dark:border-slate-700" src={images[imagePath]()} alt={altText} />
+      <div class=" text-xl relative z-[1] bottom-4 rounded-b-xl text-center bg-gradient-to-b from-slate-50 to-slate-300 dark:from-slate-600 dark:to-slate-700 py-8">
+        {title}
+      </div>
+    </a>
+  </div>
+<div class="card">
+    
+</div>
