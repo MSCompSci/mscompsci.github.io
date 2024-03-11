@@ -32,7 +32,7 @@ import Madonna from '@images/3D-gallery/madonna.png'
 
 <figure>
   <ZoomImg client:load>
-    <Image client:load slot="image" src={Sibyl} alt="" />
+    <Image loading="eager" client:load slot="image" src={Sibyl} alt="" />
     <Image client:load slot="expanded-image" src={Sibyl} alt="" />
   </ZoomImg>
   <figcaption>Michelangelo's the Delphic Sibyl</figcaption>
@@ -117,7 +117,7 @@ The finished product allows users to explore the 3D gallery and view Michelangel
 </figure>
 
 ## Demo Video
-<iframe class="w-full h-auto aspect-video rounded-xl" width="560" height="315" src="https://www.youtube-nocookie.com/embed/N9bVMMB7w9A?si=G0VSYrgKui3t7GUy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe loading="lazy" class="w-full h-auto aspect-video rounded-xl" width="560" height="315" src="https://www.youtube-nocookie.com/embed/N9bVMMB7w9A?si=G0VSYrgKui3t7GUy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Takeaways and Future Work
 
