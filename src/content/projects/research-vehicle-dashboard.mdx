@@ -26,28 +26,32 @@ import ZoomImg from "@components/zoomImg.svelte";
 
 ## Summary
 
-This is a project I completed as part of a 10-week National Science Foundation Research Experience for Undergraduates (REU) Program in 2020. I created a real-time dashboard to allow scientists affiliated with NASA, TOLNet, and the University of Alabama Huntsville to view the status of LIDAR equipment aboard a mobile atmospheric research vehicle. I also created a command line interface to allow these scientists to control the LIDAR cooling system and query information about its status from a linked computer system. The results of this project were compiled into a poster presentation at the end of the REU, and I presented the research at two national conferences.
+This is a project I completed as part of a 10-week National Science Foundation Research Experience for Undergraduates (REU) Program in 2020. I created a real-time dashboard to allow scientists affiliated with NASA, TOLNet, and the University of Alabama Huntsville to view the status of LIDAR equipment aboard a mobile atmospheric research vehicle. I also created a command line interface to allow these scientists to control the LIDAR cooling system and query information about its status from a linked computer system. 
+
+The results of this project were compiled into a poster presentation at the end of the REU, and I presented an expanded poster and abstract at two national environmental research conferences. 
+
+This was my first major web design and development project, and it inspired me to become a UX designer and researcher.
 
 ## Project Scope
 
-The original goal of my REU internship was to create a motor control program for a set of servos within the LIDAR system, but the Covid-19 pandemic caused the internship to become remote prior to the start of the project. After consulting with the research team I was placed with, we decided to pivot the project to focus on creating the web dashboard. I did not have any experience with HTML, CSS, or JavaScript, but I was able to learn it as I completed the project over the 10-week REU.
+The original goal of my REU internship was to create a motor control program for a set of servos within the LIDAR system, but the COVID-19 pandemic caused the internship to become remote prior to the start of the project. After consulting with the research team I was placed with, we decided to pivot the project to focus on creating the web dashboard. I did not have any experience with HTML, CSS, or JavaScript at the time, but I was able to learn it as I completed the project over the 10-week REU.
 
 ## Stakeholder Requirements
 
 The team I was working with required a website that would allow them to monitor the status of the LIDAR equipment aboard a remote research vehicle that is part of the TOLNet atmospheric research network. The vehicle, known as the RO3QET (rocket), has three LIDAR laser systems and their associated cooling and electrical systems. It is crucial for the research team to monitor these systems, as improper cooling or voltage could damage the LIDAR or affect data readings.
 
-The website needed to be lightweight, because the research vehicle is often taken into the field where the internet connection quality is poor. It also needed to have links to important information and manuals for the LIDAR system and its operation, as well as related links for the TOLNet system and the university.
+The website needed to be lightweight because the research vehicle is often taken into the field where the internet connection quality is poor. It also needed to have links to important information and manuals for the LIDAR system and its operation, as well as related links for the TOLNet system and the university.
 
 <figure>
   <ZoomImg client:load src="/src/images/dashboard/RO3QET.jpg" alt="" />
-  <figcaption>The dashboard for the RO3QET research vehicle</figcaption>
+  <figcaption>The RO3QET research vehicle</figcaption>
 </figure>
 
 ## Website Design
 
-The website was designed with a basic table layout that displays the data from one laser system per page. Data is displayed in real time from a connected computer on the research vehicle after it has been transmitted to the university server that hosts the website. The dashboard displays the current levels of the cooling system and the status of the laser, as well as a timestamp to ensure that the data is up-to-date.
+The website was designed with a basic table layout that displays the data from one laser system per page. The table is populated with laser data collected by a connected computer on the research vehicle. The data is displayed approximately 2 seconds after it has been collected and then transmitted to the university server that hosts the website. The dashboard displays the current levels of the cooling system and the status of the laser, as well as a timestamp to ensure that the data is up-to-date.
 
-The header of the website features links to additional information about the project, the TOLNet website, the university website, and links to the other laser status pages. The footer features the logo of TOLNet and the RO3QET, as well a manual and operation guide for the laser equipment.
+The header of the website features links to additional information about the project, the TOLNet website, the university website, and links to the other laser status pages. The footer features the logo of TOLNet and the RO3QET, as well as a manual and operation guide for the laser equipment.
 
 <figure>
   <ZoomImg client:load src="/src/images/dashboard/page.png" alt="" />
@@ -56,7 +60,7 @@ The header of the website features links to additional information about the pro
 
 ## Command Line Interface and Data Collection
 
-In addition to the website, I created a command line interface in Python to allow the research team to query the status of the equipment from the connected computer on the research vehicle. The interface also allows the team to control the equipment via a serial connection. This interface is important for monitoring the equipment directly and safely shutting down the laser when data collection must be paused.
+In addition to the website, I created a command line interface in Python to allow the research team to query the status of the equipment from the connected computer on the research vehicle. The interface also allows the team to control the equipment through a series of prompts that walk the user through the process. This interface is important for monitoring the equipment directly and safely shutting down the laser when data collection must be paused.
 
 As part of the Python script that collects data from the laser system for the website, I also integrated a logging system that optionally outputs this data to an Excel spreadsheet. This data is crucial for debugging the system and diagnosing problems.
 
@@ -77,3 +81,9 @@ The results of this research were compiled into a poster at the end of the REU f
   <ZoomImg client:load src="/src/images/dashboard/ads.png" alt="" />
   <figcaption>The research abstract <a href="https://ui.adsabs.harvard.edu/">(via the Harvard Astrophysics Data System)</a> </figcaption>
 </figure>
+
+## Takeaways and Future Work
+
+This project was fundamental in my journey of learning web development and UX/UI design, and it inspired me to pursue a career in the field. I had no experience in HTML, CSS, or JavaScript prior to the project, but I was able to persevere and complete it on schedule. It also gave me valuable experience in managing stakeholder expectations and needs, as well as presenting my research and findings.
+
+If given the opportunity to continue the project knowing what I know now, I would modify the UI to make it more aesthetically pleasing while still being optimized for poor internet connection quality. 
