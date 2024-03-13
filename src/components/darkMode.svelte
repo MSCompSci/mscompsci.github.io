@@ -7,6 +7,9 @@
     if (theme === "true") {
       darkTheme = true;
     }
+    else if(theme==="false"){
+      darkTheme = false;
+    }
     else {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       // console.log("not set, prefers dark");
